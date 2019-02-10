@@ -26,7 +26,6 @@ const globalStyle = createGlobalStyle`
     vertical-align: baseline;
     -webkit-tap-highlight-color:rgba(0,0,0,0);
   }
-  /* Added to Fix Footer to bottom of viewport */
   html, body {
     height: 100%;
   }
@@ -34,9 +33,6 @@ const globalStyle = createGlobalStyle`
     background: ${props => props.theme.colors.background};
     line-height: 1;
     font-size: 100%;
-    font-variant-ligatures: none;
-    text-rendering: optimizeLegibility;
-    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
     font-weight: 400;
     font-family: "Helvetica Neue",Helvetica,Arial, YuGothic, 'Yu Gothic', 游ゴシック体, '游ゴシック', "ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ", Meiryo,"MS ゴシック","MS Gothic",sans-serif;
   }
