@@ -31,10 +31,10 @@ const globalStyle = createGlobalStyle`
   }
   body {
     background: ${props => props.theme.colors.background};
-    line-height: 1;
+    line-height: 1.6;
     font-size: 100%;
     font-weight: 400;
-    font-family: "Helvetica Neue",Helvetica,Arial, YuGothic, 'Yu Gothic', 游ゴシック体, '游ゴシック', "ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ", Meiryo,"MS ゴシック","MS Gothic",sans-serif;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial, YuGothic, 'Yu Gothic', 游ゴシック体, '游ゴシック', "ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ", Meiryo,"MS ゴシック","MS Gothic",sans-serif;
   }
   article, aside, details, figcaption, figure,
   footer, header, hgroup, menu, nav, section {
@@ -42,6 +42,7 @@ const globalStyle = createGlobalStyle`
   }
   a {
     color: ${props => props.theme.colors.highlight};
+    transition: .2s;
     :focus{
       outline: none;
     }
