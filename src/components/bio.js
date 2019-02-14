@@ -2,7 +2,6 @@ import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import Image from "gatsby-image";
 import styled from "styled-components";
-import { Link } from "gatsby";
 
 import svgTwitter from "../svg/socials/twitter.svg";
 import svgResume from "../svg/socials/resume.svg";
@@ -10,8 +9,12 @@ import svgEmail from "../svg/socials/email.svg";
 
 const BioWrapper = styled.div`
   position: relative;
-  padding: 1.7em;
+  padding: 1.4em 1.7em;
   background: ${props => props.theme.colors.blackLight};
+  @media screen and (max-width: ${props => props.theme.responsive.medium}) {
+    padding: 1.3em;
+    font-size: 15px;
+  }
   &:before,
   &:after {
     content: "";
@@ -38,9 +41,6 @@ const BioWrapper = styled.div`
 const BioHeader = styled.div`
   display: flex;
   align-items: center;
-  .avatar {
-    width: 70px;
-  }
 `;
 const BioName = styled.div`
   margin-left: 15px;
@@ -48,16 +48,26 @@ const BioName = styled.div`
     text-decoration: none;
     font-weight: 600;
     letter-spacing: 1px;
-    font-size: 20px;
+    font-size: 1.2em;
     color: #fff;
   }
   .position {
     color: rgba(255, 255, 255, 0.4);
-    font-size: 14px;
+    font-size: 0.86em;
+  }
+  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+    margin-left: 10px;
+    .position {
+      font-size: 12px;
+    }
   }
 `;
 const BioMain = styled.div`
   padding-left: 85px;
+  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+    margin-top: 0.6em;
+    padding-left: 0;
+  }
 `;
 const BioText = styled.p`
   color: #fff;
@@ -65,17 +75,22 @@ const BioText = styled.p`
 const BioLinks = styled.div`
   margin: 0.5em 0 0;
   color: #fff;
-  a {
+  .bio-link {
     display: inline-block;
     margin-right: 20px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 0.95em;
     line-height: 30px;
     color: #fff;
     letter-spacing: 0.5px;
     &:hover {
       color: ${props => props.theme.colors.highlight};
+    }
+    @media screen and (max-width: ${props => props.theme.responsive.small}) {
+      &.bio-link--email {
+        display: none;
+      }
     }
   }
   img {
@@ -109,15 +124,18 @@ function Bio() {
                 Independent designer/front-end dev who loves crafting web apps.
               </BioText>
               <BioLinks>
-                <Link to={`/`} className="bio-link">
+                <a className="bio-link" href="https://www.resume.id/catnose99">
                   <img src={svgResume} alt="RESUME" /> RESUME
-                </Link>
-                <Link to={`/`} className="bio-link">
+                </a>
+                <a
+                  className="bio-link bio-link--email"
+                  href="mailto:catnose99@gmail.com"
+                >
                   <img src={svgEmail} alt="" /> E-mail
-                </Link>
-                <Link to={`/`} className="bio-link">
+                </a>
+                <a className="bio-link" href="https://twitter.com/catnose99">
                   <img src={svgTwitter} alt="Twitter" /> Twitter
-                </Link>
+                </a>
               </BioLinks>
             </BioMain>
           </BioWrapper>
