@@ -3144,10 +3144,6 @@ emoji-regex@^7.0.2:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-7.0.3.tgz#933a04052860c85e83c122479c4748a8e4c72156"
 
-emojione@^3.1.2:
-  version "3.1.7"
-  resolved "https://registry.yarnpkg.com/emojione/-/emojione-3.1.7.tgz#2d3c725c696f179c9dde3acb655c621ee9429b1e"
-
 emojis-list@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
@@ -4256,13 +4252,6 @@ gatsby-remark-copy-linked-files@^2.0.9:
     probe-image-size "^4.0.0"
     unist-util-visit "^1.3.0"
 
-gatsby-remark-emoji@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-emoji/-/gatsby-remark-emoji-0.0.2.tgz#fcac2ccbb854c17f122ffb7f4faf20764a11b359"
-  dependencies:
-    bluebird "^3.5.0"
-    emojione "^3.1.2"
-
 gatsby-remark-images@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-2.0.6.tgz#7567b40be11fec8931084f27d8b3aa18ccc4d5fc"
@@ -4301,6 +4290,13 @@ gatsby-remark-smartypants@^2.0.8:
     retext "^5.0.0"
     retext-smartypants "^3.0.0"
     unist-util-visit "^1.3.0"
+
+gatsby-remark-twemoji-shortcut@^0.10.1:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-twemoji-shortcut/-/gatsby-remark-twemoji-shortcut-0.10.1.tgz#274767970226d838395e6b6746c400bf77488271"
+  dependencies:
+    cheerio "^1.0.0-rc.2"
+    twemoji "^11.0.0"
 
 gatsby-source-filesystem@^2.0.20:
   version "2.0.20"
@@ -9743,6 +9739,10 @@ tunnel-agent@^0.6.0:
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
+
+twemoji@^11.0.0, twemoji@^11.3.0:
+  version "11.3.0"
+  resolved "https://registry.yarnpkg.com/twemoji/-/twemoji-11.3.0.tgz#8c520094fe94849db10fd5687f50c936183c4fad"
 
 type-check@~0.3.2:
   version "0.3.2"
