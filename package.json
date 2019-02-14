@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "CatKnows",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "A personal blog by @catnose99",
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "bugs": {
@@ -19,6 +19,7 @@
     "gatsby-plugin-sharp": "^2.0.20",
     "gatsby-plugin-styled-components": "^3.0.5",
     "gatsby-remark-copy-linked-files": "^2.0.9",
+    "gatsby-remark-emoji": "^0.0.2",
     "gatsby-remark-images": "^2.0.6",
     "gatsby-remark-prismjs": "^3.2.4",
     "gatsby-remark-responsive-iframe": "^2.0.9",
