@@ -12,20 +12,43 @@ const Nav = styled.nav`
   display: block;
   margin: 0;
   padding: 1.5em 0;
+  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+    padding: 1em 0;
+  }
 `;
 
 const CategoryItemList = styled.ul`
   display: flex;
+  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+    margin: 0 -20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    &:after {
+      content: "";
+      width: 40px;
+      flex: 0 0 auto;
+    }
+  }
 `;
 
 const CategoryItem = styled.li`
   width: 70px;
   margin: 0 20px 0 0;
   text-align: center;
+  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+    width: 60px;
+    flex: 0 0 auto;
+    margin: 0 0 0 15px;
+  }
   .cat-item__link {
     text-decoration: none;
     color: #fff;
   }
+
   .cat-item__image {
     padding: 2px;
     background: ${props => props.theme.colors.blackLight};
@@ -40,11 +63,14 @@ const CategoryItem = styled.li`
     }
   }
   .cat-item__name {
-    margin-top: 8px;
+    margin-top: 5px;
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.5px;
     color: rgb(114, 125, 134);
+    @media screen and (max-width: ${props => props.theme.responsive.small}) {
+      font-size: 12px;
+    }
   }
   &.active {
     .cat-item__image:after {
@@ -117,7 +143,7 @@ const CategoryMenu = ({ location }) => {
             path={path}
           />
           <CategoryLink
-            catName="Collection"
+            catName="Collect"
             catIcon={svgCollection}
             catLink="/my-second-post/"
             path={path}
