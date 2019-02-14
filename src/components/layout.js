@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyle from "../styles/global";
 import theme from "../styles/theme";
 import Header from "../components/Header";
-// import styled from "styled-components";
+import CategoryMenu from "./CategoryMenu";
 
 class Layout extends React.Component {
   render() {
@@ -13,6 +13,7 @@ class Layout extends React.Component {
       <ThemeProvider theme={theme}>
         <div className="siteRoot">
           <Header title={title} location={location} />
+          <CategoryMenu location={location} />
           <main>{children}</main>
           <footer>
             © {new Date().getFullYear()}, Built with

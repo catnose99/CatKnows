@@ -1,53 +1,67 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
+import ContentWrapper from "../components/ContentWrapper";
+import svgLogo from "../svg/logo.svg";
 
 const HeaderTag = styled.header`
-  position: relative;
-  display: flex;
-  justify-content: space-between;
   width: 100%;
-  padding: 14px 0 12px;
-  text-align: center;
-  background: #111;
-  &:before {
-    position: absolute;
-    top: -10px;
-    left: 0;
-    display: block;
-    content: "";
-    width: 100%;
-    height: 14px;
-    background: ${props => props.theme.colors.gradient};
-  }
+  padding: 16px 0;
+  background: #000;
+  border-bottom: solid 1px ${props => props.theme.colors.blackLight};
+`;
+
+const HeaderInner = styled.div`
+  position: relative;
   h1,
   h3 {
     width: 100%;
   }
   .logo {
-    width: 200px;
-    height: 45px;
+    width: 180px;
+    height: 42.7px;
+    @media screen and (max-width: ${props => props.theme.responsive.small}) {
+      width: 165px;
+      height: 37px;
+    }
   }
-  a {
+
+  .logo-link {
     display: block;
+  }
+  .message-link {
+    position: absolute;
+    right: 0;
+    top: 7px;
+    display: block;
+    width: 34px;
+    &:hover {
+      top: 5px;
+    }
   }
 `;
 
 const Header = ({ title, location }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
-  const logo = (
-    <Link to={`/`}>
-      <img className="logo" src="/images/logo.svg" alt={title} />
+  const logoLink = (
+    <Link to={`/`} className="logo-link">
+      <img className="logo" src={svgLogo} alt={title} />
     </Link>
   );
 
-  let headerInner;
+  let headerLogo;
   if (location.pathname === rootPath) {
-    headerInner = <h1>{logo}</h1>;
+    headerLogo = <h1>{logoLink}</h1>;
   } else {
-    headerInner = <h3>{logo}</h3>;
+    headerLogo = <h3>{logoLink}</h3>;
   }
-  return <HeaderTag>{headerInner}</HeaderTag>;
+  return (
+    <HeaderTag>
+      <ContentWrapper>
+        <HeaderInner>{headerLogo}</HeaderInner>
+      </ContentWrapper>
+    </HeaderTag>
+  );
 };
 
 export default Header;
