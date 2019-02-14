@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby";
 import Bio from "../components/Bio";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
+import ContentWrapper from "../components/ContentWrapper";
 
 class BlogIndex extends React.Component {
   render() {
@@ -17,21 +18,21 @@ class BlogIndex extends React.Component {
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <Bio />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug;
-          return (
-            <div key={node.fields.slug}>
-              <h3 style={{}}>
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          );
-        })}
+        <ContentWrapper>
+          <Bio />
+          {posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug;
+            return (
+              <div key={node.fields.slug}>
+                <h3 style={{}}>
+                  <Link to={node.fields.slug}>{title}</Link>
+                </h3>
+                <small>{node.frontmatter.date}</small>
+                <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              </div>
+            );
+          })}
+        </ContentWrapper>
       </Layout>
     );
   }

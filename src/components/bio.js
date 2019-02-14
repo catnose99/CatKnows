@@ -9,23 +9,8 @@ function Bio() {
       render={data => {
         const { author, social } = data.site.siteMetadata;
         return (
-          <div
-            style={{
-              display: `flex`
-            }}
-          >
-            <Image
-              fixed={data.avatar.childImageSharp.fixed}
-              alt={author}
-              style={{
-                marginBottom: 0,
-                minWidth: 50,
-                borderRadius: `100%`
-              }}
-              imgStyle={{
-                borderRadius: `50%`
-              }}
-            />
+          <div>
+            <Image fixed={data.avatar.childImageSharp.fixed} alt={author} />
             <p>
               <a href={`https://twitter.com/${social.twitter}`}>CatNose</a>
               <span>Designer + Engineer hybrid.</span>
