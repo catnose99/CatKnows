@@ -12,10 +12,7 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
+        <SEO title="" keywords={[`個人ブログ`]} />
         <h2>NEW POSTS</h2>
         {posts.map(({ node }) => {
           return <PostCard key={node.fields.slug} node={node} />;
@@ -44,6 +41,7 @@ export const pageQuery = graphql`
             date(formatString: "YYYY/MM/DD")
             title
             emoji
+            category
           }
         }
       }
