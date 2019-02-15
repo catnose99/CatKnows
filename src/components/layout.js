@@ -3,7 +3,6 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyle from "../styles/global";
 import theme from "../styles/theme";
 import Header from "../components/Header";
-import CategoryMenu from "./CategoryMenu";
 import Bio from "../components/Bio";
 import ContentWrapper from "../components/ContentWrapper";
 import styled from "styled-components";
@@ -30,7 +29,6 @@ class Layout extends React.Component {
           <ContentWrapper>
             <Content>
               <MainWrapper>
-                <CategoryMenu location={location} />
                 <main>{children}</main>
               </MainWrapper>
               <Bio />
