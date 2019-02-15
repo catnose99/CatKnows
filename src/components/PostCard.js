@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import twemoji from "twemoji";
+import CategoryLabel from "./CategoryLabel";
 
 const PostCardWrapper = styled.div`
-  a {
+  .post-card-link {
     display: flex;
     align-items: center;
     padding: 1.4em 0;
@@ -51,14 +52,15 @@ const PostCard = ({ node }) => {
     folder: "svg",
     ext: ".svg"
   });
+
   return (
     <PostCardWrapper>
-      <Link to={node.fields.slug}>
+      <Link to={node.fields.slug} className="post-card-link">
         <PostCardEmoji dangerouslySetInnerHTML={{ __html: emoji }} />
         <PostCardContent>
           <h3>{title}</h3>
           <time>{node.frontmatter.date}</time>
-          {node.frontmatter.category}
+          <CategoryLabel slug={node.frontmatter.category} />
         </PostCardContent>
       </Link>
     </PostCardWrapper>

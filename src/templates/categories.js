@@ -62,6 +62,7 @@ export const pageQuery = graphql`
         categories {
           name
           slug
+          color
         }
       }
     }

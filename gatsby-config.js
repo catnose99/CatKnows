@@ -9,12 +9,24 @@ module.exports = {
     },
     categories: [
       {
-        name: "開発の備忘録",
-        slug: "dev"
+        name: "Design",
+        slug: "design",
+        color: "#0c9ee4"
       },
       {
-        name: "Design",
-        slug: "design"
+        name: "Develop",
+        slug: "dev",
+        color: "#ff5654"
+      },
+      {
+        name: "Idea",
+        slug: "idea",
+        color: "#ffa22b"
+      },
+      {
+        name: "Collect",
+        slug: "collect",
+        color: "#ffa22b"
       }
     ]
   },
