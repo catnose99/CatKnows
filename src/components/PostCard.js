@@ -2,14 +2,13 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import twemoji from "twemoji";
-import CategoryLabel from "./CategoryLabel";
+import CategoryLabel from "../components/CategoryLabel";
 
 const PostCardWrapper = styled.div`
   .post-card-link {
     display: flex;
     align-items: center;
     padding: 1.4em 0;
-    text-decoration: none;
     color: #fff;
     border-top: solid 1px ${props => props.theme.colors.blackLight};
     &:hover {
@@ -27,7 +26,7 @@ const PostCardEmoji = styled.p`
   background: ${props => props.theme.colors.blackLight};
   border-radius: 4px;
   font-size: 50px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
   img {
     width: 55px;
     height: 55px;

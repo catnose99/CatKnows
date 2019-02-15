@@ -40,7 +40,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "YYYY/MM/DD")
+            date(formatString: "YYYY.MM.DD")
             title
             emoji
             category

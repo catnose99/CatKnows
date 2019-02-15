@@ -9,29 +9,17 @@ import svgEmail from "../svg/socials/email.svg";
 
 const BioWrapper = styled.div`
   position: relative;
-  max-width: 290px;
+  width: ${props => props.theme.sizes.bioWidth};
   padding: 1.5em;
   font-size: 15.5px;
   background: ${props => props.theme.colors.blackLight};
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  @media screen and (max-width: ${props => props.theme.responsive.large}) {
+    margin: 2em 0;
+    width: 100%;
   }
-  &:before {
-    top: 0;
-    left: 0;
-    border-top: 20px solid ${props => props.theme.colors.background};
-    border-right: 20px solid transparent;
-  }
-  &:after {
-    bottom: 0;
-    right: 0;
-    border-bottom: 20px solid ${props => props.theme.colors.background};
-    border-left: 20px solid transparent;
-  }
+
   .avatar {
     border-radius: 50%;
   }
@@ -43,7 +31,6 @@ const BioHeader = styled.div`
 const BioName = styled.div`
   margin-left: 10px;
   a {
-    text-decoration: none;
     font-weight: 600;
     letter-spacing: 1px;
     font-size: 1.3em;
@@ -61,10 +48,10 @@ const BioLinks = styled.div`
   display: flex;
   color: #fff;
   text-align: center;
+  max-width: 244px;
   .bio-link {
     width: 33.3%;
     display: block;
-    text-decoration: none;
     font-weight: 600;
     font-size: 0.9em;
     line-height: 30px;
@@ -102,8 +89,8 @@ function Bio() {
             </BioHeader>
             <BioMain>
               <BioText>
-                Independent UI/UX designer / front-end developer who loves
-                crafting web apps.
+                Independent UI/UX designer / front-end developer / writer who
+                loves crafting web apps.
               </BioText>
               <BioLinks>
                 <a className="bio-link" href="https://www.resume.id/catnose99">

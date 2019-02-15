@@ -8,7 +8,7 @@ const HeaderTag = styled.header`
   width: 100%;
   padding: 16px 0;
   // border-bottom: solid 1px ${props => props.theme.colors.blackLight};
-  box-shadow: 0 2px 4px rgba(0,0,0,.2);
+  box-shadow: 0 2px 4px rgba(0,0,0,.4);
 `;
 
 const HeaderInner = styled.div`
@@ -18,12 +18,9 @@ const HeaderInner = styled.div`
     width: 100%;
   }
   .logo {
-    width: 180px;
-    height: 42.7px;
-    @media screen and (max-width: ${props => props.theme.responsive.small}) {
-      width: 165px;
-      height: 37px;
-    }
+    display: block;
+    width: 165px;
+    height: 37px;
   }
 
   .logo-link {

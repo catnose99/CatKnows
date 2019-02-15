@@ -44,7 +44,6 @@ const CategoryItem = styled.li`
     margin: 0 0 0 15px;
   }
   .cat-item__link {
-    text-decoration: none;
     color: #fff;
   }
 

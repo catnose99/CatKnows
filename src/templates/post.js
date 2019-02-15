@@ -4,6 +4,89 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import twemoji from "twemoji";
+import styled from "styled-components";
+import svgPattern from "../svg/others/pattern.svg";
+import CategoryLabel from "../components/CategoryLabel";
+
+const Content = styled.section`
+  position: relative;
+  background: #fff;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 5;
+  }
+  &:before {
+    top: 0;
+    left: 0;
+    border-top: 20px solid ${props => props.theme.colors.background};
+    border-right: 20px solid transparent;
+  }
+  &:after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 20px solid ${props => props.theme.colors.background};
+    border-left: 20px solid transparent;
+  }
+  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+    margin: 0 -20px;
+    &:before,
+    &:after {
+      content: none;
+    }
+  }
+`;
+
+const HeroImage = styled.p`
+  position: relative;
+
+  background: #f9eec4;
+  text-align: center;
+  background-image: url("${svgPattern}");
+  background-repeat: repeat;
+  background-size: 400px;
+  min-height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .emoji {
+    width: 110px;
+    height: 110px;
+  }
+`;
+
+const ContentMain = styled.div`
+  padding: 1.8em 2.5em;
+  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+    padding: 30px 20px;
+  }
+`;
+
+const PostTitle = styled.h1`
+  margin: 0.1em 0 0.3em;
+  font-size: 1.9em;
+  font-weight: 600;
+`;
+
+const PostDate = styled.time`
+  display: block;
+  color: ${props => props.theme.colors.silver};
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+`;
+
+const PostContent = styled.div`
+  margin: 1em 0;
+  line-height: 1.9;
+  font-size: 17px;
+  a:hover {
+    text-decoration: underline;
+  }
+`;
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -17,34 +100,39 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <h1>{post.frontmatter.title}</h1>
-        <p>{post.frontmatter.date}</p>
-        <p
-          dangerouslySetInnerHTML={{
-            __html: twemoji.parse(post.frontmatter.emoji, {
-              folder: "svg",
-              ext: ".svg"
-            })
-          }}
-        />
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Content>
+          <HeroImage
+            dangerouslySetInnerHTML={{
+              __html: twemoji.parse(post.frontmatter.emoji || "😺", {
+                folder: "svg",
+                ext: ".svg"
+              })
+            }}
+          />
+          <ContentMain>
+            <PostDate>{post.frontmatter.date}</PostDate>
+            <PostTitle>{post.frontmatter.title}</PostTitle>
+            <CategoryLabel slug={post.frontmatter.category} isLink="true" />
+            <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
 
-        <ul>
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
+            <ul>
+              <li>
+                {previous && (
+                  <Link to={previous.fields.slug} rel="prev">
+                    ← {previous.frontmatter.title}
+                  </Link>
+                )}
+              </li>
+              <li>
+                {next && (
+                  <Link to={next.fields.slug} rel="next">
+                    {next.frontmatter.title} →
+                  </Link>
+                )}
+              </li>
+            </ul>
+          </ContentMain>
+        </Content>
       </Layout>
     );
   }
@@ -67,8 +155,9 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY.MM.DD")
         emoji
+        category
       }
     }
   }
