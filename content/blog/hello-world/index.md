@@ -1,6 +1,7 @@
 ---
 title: Hello Worlds
 date: "2015-05-01T22:12:03.284Z"
+category: "design"
 ---
 
 This is my first post on my new fake blog! How exciting!

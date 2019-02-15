@@ -58,6 +58,7 @@ const PostCard = ({ node }) => {
         <PostCardContent>
           <h3>{title}</h3>
           <time>{node.frontmatter.date}</time>
+          {node.frontmatter.category}
         </PostCardContent>
       </Link>
     </PostCardWrapper>

@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 
-import Bio from "../components/Bio";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import twemoji from "twemoji";
@@ -9,7 +8,6 @@ import twemoji from "twemoji";
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
-    console.log(post.frontmatter);
     const siteTitle = this.props.data.site.siteMetadata.title;
     const { previous, next } = this.props.pageContext;
 
@@ -30,7 +28,6 @@ class BlogPostTemplate extends React.Component {
           }}
         />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <Bio />
 
         <ul>
           <li>
