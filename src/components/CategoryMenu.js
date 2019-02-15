@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import ContentWrapper from "./ContentWrapper";
 import svgNew from "../svg/categories/new.svg";
 import svgDesign from "../svg/categories/design.svg";
 import svgDev from "../svg/categories/dev.svg";
@@ -11,7 +10,7 @@ import svgIdea from "../svg/categories/idea.svg";
 const Nav = styled.nav`
   display: block;
   margin: 0;
-  padding: 1.5em 0;
+  padding: 0;
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
     padding: 1em 0;
   }
@@ -67,7 +66,7 @@ const CategoryItem = styled.li`
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.5px;
-    color: rgb(114, 125, 134);
+    color: ${props => props.theme.colors.gray};
     @media screen and (max-width: ${props => props.theme.responsive.small}) {
       font-size: 12px;
     }
@@ -116,40 +115,28 @@ const CategoryMenu = ({ location }) => {
   const path = location.pathname;
   return (
     <Nav>
-      <ContentWrapper>
-        <CategoryItemList>
-          <CategoryLink
-            catName="New"
-            catIcon={svgNew}
-            catLink="/"
-            path={path}
-          />
-          <CategoryLink
-            catName="Design"
-            catIcon={svgDesign}
-            catLink="/a"
-            path={path}
-          />
-          <CategoryLink
-            catName="Dev"
-            catIcon={svgDev}
-            catLink="/a"
-            path={path}
-          />
-          <CategoryLink
-            catName="Idea"
-            catIcon={svgIdea}
-            catLink="/a"
-            path={path}
-          />
-          <CategoryLink
-            catName="Collect"
-            catIcon={svgCollection}
-            catLink="/my-second-post/"
-            path={path}
-          />
-        </CategoryItemList>
-      </ContentWrapper>
+      <CategoryItemList>
+        <CategoryLink catName="New" catIcon={svgNew} catLink="/" path={path} />
+        <CategoryLink
+          catName="Design"
+          catIcon={svgDesign}
+          catLink="/a"
+          path={path}
+        />
+        <CategoryLink catName="Dev" catIcon={svgDev} catLink="/a" path={path} />
+        <CategoryLink
+          catName="Idea"
+          catIcon={svgIdea}
+          catLink="/a"
+          path={path}
+        />
+        <CategoryLink
+          catName="Collect"
+          catIcon={svgCollection}
+          catLink="/my-second-post/"
+          path={path}
+        />
+      </CategoryItemList>
     </Nav>
   );
 };

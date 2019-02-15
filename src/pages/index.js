@@ -1,10 +1,8 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
-
-import Bio from "../components/Bio";
+import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import ContentWrapper from "../components/ContentWrapper";
+import PostCard from "../components/PostCard";
 
 class BlogIndex extends React.Component {
   render() {
@@ -18,21 +16,10 @@ class BlogIndex extends React.Component {
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <ContentWrapper>
-          <Bio />
-          {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug;
-            return (
-              <div key={node.fields.slug}>
-                <h3 style={{}}>
-                  <Link to={node.fields.slug}>{title}</Link>
-                </h3>
-                <small>{node.frontmatter.date}</small>
-                <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-              </div>
-            );
-          })}
-        </ContentWrapper>
+        <h2>NEW POSTS</h2>
+        {posts.map(({ node }) => {
+          return <PostCard key={node.fields.slug} node={node} />;
+        })}
       </Layout>
     );
   }
@@ -50,13 +37,13 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          excerpt
           fields {
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "YYYY/MM/DD")
             title
+            emoji
           }
         }
       }

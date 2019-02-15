@@ -1,5 +1,5 @@
 ---
-title: Hello World
+title: Hello Worlds
 date: "2015-05-01T22:12:03.284Z"
 ---
 
@@ -19,3 +19,7 @@ Oh, and here's a great quote from this Wikipedia on
 > firm-textured, round yolk that is bright orange-red in color.
 
 ![Chinese Salty Egg](./salty_egg.jpg)
+
+ここに :smile:
+ここに 😉
+:smiley_cat: :smile_cat:

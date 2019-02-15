@@ -9,12 +9,10 @@ import svgEmail from "../svg/socials/email.svg";
 
 const BioWrapper = styled.div`
   position: relative;
-  padding: 1.4em 1.7em;
+  max-width: 290px;
+  padding: 1.5em;
+  font-size: 15.5px;
   background: ${props => props.theme.colors.blackLight};
-  @media screen and (max-width: ${props => props.theme.responsive.medium}) {
-    padding: 1.3em;
-    font-size: 15px;
-  }
   &:before,
   &:after {
     content: "";
@@ -43,60 +41,44 @@ const BioHeader = styled.div`
   align-items: center;
 `;
 const BioName = styled.div`
-  margin-left: 15px;
+  margin-left: 10px;
   a {
     text-decoration: none;
     font-weight: 600;
     letter-spacing: 1px;
-    font-size: 1.2em;
+    font-size: 1.3em;
     color: #fff;
-  }
-  .position {
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 0.86em;
-  }
-  @media screen and (max-width: ${props => props.theme.responsive.small}) {
-    margin-left: 10px;
-    .position {
-      font-size: 12px;
-    }
   }
 `;
 const BioMain = styled.div`
-  padding-left: 85px;
-  @media screen and (max-width: ${props => props.theme.responsive.small}) {
-    margin-top: 0.6em;
-    padding-left: 0;
-  }
+  margin-top: 1em;
 `;
 const BioText = styled.p`
   color: #fff;
 `;
 const BioLinks = styled.div`
-  margin: 0.5em 0 0;
+  margin-top: 1.5em;
+  display: flex;
   color: #fff;
+  text-align: center;
   .bio-link {
-    display: inline-block;
-    margin-right: 20px;
+    width: 33.3%;
+    display: block;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95em;
+    font-size: 0.9em;
     line-height: 30px;
-    color: #fff;
+    color: ${props => props.theme.colors.gray};
     letter-spacing: 0.5px;
     &:hover {
       color: ${props => props.theme.colors.highlight};
     }
-    @media screen and (max-width: ${props => props.theme.responsive.small}) {
-      &.bio-link--email {
-        display: none;
-      }
-    }
   }
   img {
-    width: 28px;
-    height: 28px;
-    vertical-align: middle;
+    display: block;
+    margin: 0 auto;
+    width: 40px;
+    height: 33px;
   }
 `;
 
@@ -116,25 +98,28 @@ function Bio() {
               />
               <BioName>
                 <a href={`https://twitter.com/${social.twitter}`}>CatNose</a>
-                <div className="position">Designer + Engineer hybrid.</div>
               </BioName>
             </BioHeader>
             <BioMain>
               <BioText>
-                Independent designer/front-end dev who loves crafting web apps.
+                Independent UI/UX designer / front-end developer who loves
+                crafting web apps.
               </BioText>
               <BioLinks>
                 <a className="bio-link" href="https://www.resume.id/catnose99">
-                  <img src={svgResume} alt="RESUME" /> RESUME
+                  <img src={svgResume} alt="RESUME" />
+                  <div>RESUME</div>
                 </a>
                 <a
                   className="bio-link bio-link--email"
                   href="mailto:catnose99@gmail.com"
                 >
-                  <img src={svgEmail} alt="" /> E-mail
+                  <img src={svgEmail} alt="" />
+                  <div>E-mail</div>
                 </a>
                 <a className="bio-link" href="https://twitter.com/catnose99">
-                  <img src={svgTwitter} alt="Twitter" /> Twitter
+                  <img src={svgTwitter} alt="Twitter" />
+                  <div>Twitter</div>
                 </a>
               </BioLinks>
             </BioMain>
