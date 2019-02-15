@@ -12,8 +12,7 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="" keywords={[`個人ブログ`]} />
-        <h2>NEW POSTS</h2>
+        <SEO title="" />
         {posts.map(({ node }) => {
           return <PostCard key={node.fields.slug} node={node} />;
         })}

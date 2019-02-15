@@ -1,12 +1,22 @@
 module.exports = {
   siteMetadata: {
     title: `Cat Knows`,
-    author: `Kyle Mathews`,
+    author: `CatNose`,
     description: `CatNoseの個人ブログ。デザインやプログラミングの知見、生産性向上テクニックなどをストックしていきます。`,
     siteUrl: `https://catnose.work`,
     social: {
       twitter: `catnose99`
-    }
+    },
+    categories: [
+      {
+        name: "開発の備忘録",
+        slug: "dev"
+      },
+      {
+        name: "Design",
+        slug: "design"
+      }
+    ]
   },
   plugins: [
     {

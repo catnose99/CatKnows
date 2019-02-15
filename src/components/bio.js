@@ -97,7 +97,7 @@ function Bio() {
                 className="avatar"
               />
               <BioName>
-                <a href={`https://twitter.com/${social.twitter}`}>CatNose</a>
+                <a href={`https://twitter.com/${social.twitter}`}>{author}</a>
               </BioName>
             </BioHeader>
             <BioMain>

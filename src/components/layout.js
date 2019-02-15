@@ -14,7 +14,7 @@ const MainWrapper = styled.div`
 `;
 
 const Content = styled.div`
-  margin-top: 1.7em;
+  margin-top: 2em;
   display: flex;
   align-items: flex-start;
 `;
