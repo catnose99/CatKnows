@@ -15,6 +15,10 @@ const Content = styled.section`
   position: relative;
   background: #fff;
   overflow: hidden;
+  font-size: 17px;
+  @media screen and (max-width: ${props => props.theme.responsive.medium}) {
+    font-size: 15.5px;
+  }
   &:before,
   &:after {
     content: "";
@@ -70,7 +74,10 @@ const ContentMain = styled.div`
 
 const PostTitle = styled.h1`
   margin: 0.1em 0 0.3em;
-  font-size: 1.9em;
+  font-size: 1.8em;
+  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+    font-size: 25px;
+  }
   font-weight: 600;
   line-height: 1.5;
 `;

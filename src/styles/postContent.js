@@ -5,7 +5,6 @@ import svgHeadingIcon from "../svg/others/heading-icon.svg";
 const postContentStyle = css`
   margin: 1em 0;
   line-height: 1.9;
-  font-size: 17px;
 
   a:hover {
     text-decoration: underline;

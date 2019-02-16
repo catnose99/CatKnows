@@ -11,12 +11,6 @@ const SyntaxHighlightStyle = css`
   }
   code[class*="language-"],
   pre[class*="language-"] {
-    -moz-tab-size: 2;
-    -o-tab-size: 2;
-    tab-size: 2;
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
     hyphens: none;
     white-space: pre;
     white-space: pre-wrap;
@@ -29,13 +23,13 @@ const SyntaxHighlightStyle = css`
   pre[class*="language-"],
   :not(pre) > code[class*="language-"] {
     background: ${props => props.theme.colors.blackLight};
-    border-radius: 7px;
+    border-radius: 5px;
     @media screen and (max-width: ${props => props.theme.responsive.small}) {
       border-radius: 0;
     }
   }
   pre[class*="language-"] {
-    padding: 1.4em ${boxPaddingSide};
+    padding: 1.1em ${boxPaddingSide};
     overflow: auto;
   }
 
@@ -140,6 +134,37 @@ const SyntaxHighlightStyle = css`
     margin-left: -${boxPaddingSide};
     padding-left: 5px;
     border-left: 5px solid #4cb4e6;
+  }
+
+  /*gatsby-remark-code-titles*/
+  .gatsby-code-title {
+    margin-top: 1.5em;
+    background: ${props => props.theme.colors.background};
+    color: #fff;
+    font-size: 13px;
+    padding: 0.6em 0.7em;
+    line-height: 1;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
+      Courier New, monospace;
+    font-weight: 600;
+    border-radius: 4px 4px 0 0;
+    display: table;
+  }
+  .gatsby-code-title + .gatsby-highlight {
+    margin-top: 0;
+    pre[class*="language-"],
+    :not(pre) > code[class*="language-"] {
+      border-radius: 0 4px 4px 4px;
+    }
+  }
+  /* Inline code */
+  p > code {
+    display: inline-block;
+    background: #e3f1ff;
+    padding: 0.1em 0.3em;
+    border-radius: 2px;
+    line-height: 1.4;
+    color: #3f558a !important;
   }
 `;
 
