@@ -7,6 +7,8 @@ const variables = {
     silver: "#969fa7",
     whitesmoke: "#f1f4f7",
     highlight: "#20a8ea",
+    red: "#f7615f",
+    orange: "#ffa22b",
     gradient: "linear-gradient(-45deg,#ffa649,#f7645b,#805ed4)"
   },
   sizes: {

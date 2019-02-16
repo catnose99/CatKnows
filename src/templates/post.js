@@ -7,6 +7,7 @@ import twemoji from "twemoji";
 import styled from "styled-components";
 import postSyntaxHighlightStyle from "../styles/postSyntaxHighlight";
 import postContentStyle from "../styles/postContent";
+import postCustomBlockStyle from "../styles/postCustomBlock";
 import svgPattern from "../svg/others/pattern.svg";
 import CategoryLabel from "../components/CategoryLabel";
 
@@ -84,6 +85,7 @@ const PostDate = styled.time`
 const PostContent = styled.div`
   ${postSyntaxHighlightStyle}
   ${postContentStyle}
+  ${postCustomBlockStyle}
 `;
 
 class BlogPostTemplate extends React.Component {

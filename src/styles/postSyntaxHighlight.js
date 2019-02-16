@@ -29,7 +29,7 @@ const SyntaxHighlightStyle = css`
   pre[class*="language-"],
   :not(pre) > code[class*="language-"] {
     background: ${props => props.theme.colors.blackLight};
-    border-radius: 4px;
+    border-radius: 7px;
     @media screen and (max-width: ${props => props.theme.responsive.small}) {
       border-radius: 0;
     }
@@ -99,7 +99,7 @@ const SyntaxHighlightStyle = css`
   .token.important,
   .token.statement,
   .token.bold {
-    font-weight: bold;
+    font-weight: 600;
   }
   .token.punctuation {
     color: #bebec5;

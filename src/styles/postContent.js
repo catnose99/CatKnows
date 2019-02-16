@@ -106,9 +106,6 @@ const postContentStyle = css`
       }
     }
   }
-  & > *:first-child {
-    margin-top: 0;
-  }
 `;
 
 export default postContentStyle;

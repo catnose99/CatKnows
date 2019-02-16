@@ -71,6 +71,10 @@ module.exports = {
             resolve: "gatsby-remark-custom-blocks",
             options: {
               blocks: {
+                simple: {
+                  classes: "simple",
+                  title: "optional"
+                },
                 info: {
                   classes: "info",
                   title: "optional"

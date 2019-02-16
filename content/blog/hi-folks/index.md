@@ -15,7 +15,13 @@ Duden flows by their place and supplies it with the necessary regelialia.
 [[info | Memo]]
 | Some note here
 
-[[alert | Danger! ]]
+[[simple | 🙅 Danger! ]]
+| - adafa
+| - dfadf
+| - adafa
+| - dfadf
+
+[[alert | 🙅 Danger! ]]
 | - adafa
 | - dfadf
 | - adafa
