@@ -21,6 +21,9 @@ const HeaderInner = styled.div`
     display: block;
     width: 165px;
     height: 37px;
+    @media screen and (max-width: ${props => props.theme.responsive.small}) {
+      margin: 0 auto;
+    }
   }
 
   .logo-link {

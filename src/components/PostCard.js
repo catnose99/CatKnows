@@ -26,7 +26,6 @@ const PostCardEmoji = styled.p`
   background: ${props => props.theme.colors.blackLight};
   border-radius: 4px;
   font-size: 50px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
   img {
     width: 55px;
     height: 55px;
