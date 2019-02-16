@@ -19,6 +19,7 @@
     "gatsby-plugin-sharp": "^2.0.20",
     "gatsby-plugin-styled-components": "^3.0.5",
     "gatsby-remark-copy-linked-files": "^2.0.9",
+    "gatsby-remark-custom-blocks": "^2.0.5",
     "gatsby-remark-images": "^2.0.6",
     "gatsby-remark-prismjs": "^3.2.4",
     "gatsby-remark-responsive-iframe": "^2.0.9",

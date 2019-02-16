@@ -12,6 +12,91 @@ Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
 right at the coast of the Semantics, a large language ocean. A small river named
 Duden flows by their place and supplies it with the necessary regelialia.
 
+[[info | Memo]]
+| Some note here
+
+[[alert | Danger! ]]
+| - adafa
+| - dfadf
+| - adafa
+| - dfadf
+
+[[notice | Note]]
+| Some note here
+
+## code
+
+```css
+.gatsby-highlight-code-line {
+  background-color: #feb;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid #f99;
+}
+
+.gatsby-highlight {
+  background-color: #fdf6e3;
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  padding: 1em;
+  overflow: auto;
+}
+
+.gatsby-highlight pre[class*="language-"] {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  overflow: initial;
+  float: left; /* 1 */
+  min-width: 100%; /* 2 */
+}
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding-left: 2.8em; /* 3 */
+}
+```
+
+```javascript
+// In your gatsby-config.js
+plugins: [
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [`gatsby-remark-prismjs`]
+    }
+  }
+];
+```
+
+```javascript{1,4-6}
+// In your gatsby-config.js
+plugins: [
+  {
+    resolve: `gatsby-transformer-`,
+    options: {
+      plugins: [`gatsby-remark-prismjs`]
+    }
+  }
+];
+```
+
+```html
+<pre class="line-numbers language-markup">
+    <code>
+        &lt;img src="example.png"&gt;
+    </code>
+</pre>
+```
+
+## table
+
+| TH 左寄せ | TH 中央寄せ | TH 右寄せ |
+| :-------- | :---------: | --------: |
+| TD        |     TD      |        TD |
+| TD        |     TD      |        TD |
+
 ## On deer horse aboard tritely yikes and much
 
 The Big Oxmox advised her not to do so, because there were thousands of bad

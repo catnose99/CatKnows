@@ -16,7 +16,7 @@ module.exports = {
       {
         name: "Develop",
         slug: "dev",
-        color: "#ff5654"
+        color: "#f7615f"
       },
       {
         name: "Idea",
@@ -67,7 +67,34 @@ module.exports = {
               classname: "twemoji"
             }
           },
-          `gatsby-remark-prismjs`,
+          {
+            resolve: "gatsby-remark-custom-blocks",
+            options: {
+              blocks: {
+                info: {
+                  classes: "info",
+                  title: "optional"
+                },
+                alert: {
+                  classes: "alert",
+                  title: "optional"
+                },
+                notice: {
+                  classes: "notice",
+                  title: "optional"
+                }
+              }
+            }
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              noInlineHighlight: false
+            }
+          },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`
         ]

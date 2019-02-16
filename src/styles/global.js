@@ -31,6 +31,7 @@ const globalStyle = createGlobalStyle`
   }
   body {
     background: ${props => props.theme.colors.background};
+    color: ${props => props.theme.colors.background};
     line-height: 1.6;
     font-size: 100%;
     font-weight: 400;

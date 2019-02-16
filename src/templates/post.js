@@ -5,12 +5,15 @@ import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import twemoji from "twemoji";
 import styled from "styled-components";
+import postSyntaxHighlightStyle from "../styles/postSyntaxHighlight";
+import postContentStyle from "../styles/postContent";
 import svgPattern from "../svg/others/pattern.svg";
 import CategoryLabel from "../components/CategoryLabel";
 
 const Content = styled.section`
   position: relative;
   background: #fff;
+  overflow: hidden;
   &:before,
   &:after {
     content: "";
@@ -32,7 +35,7 @@ const Content = styled.section`
     border-left: 20px solid transparent;
   }
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
-    margin: 0 -20px;
+    margin: 0 -${props => props.theme.sideSpace.small};
     &:before,
     &:after {
       content: none;
@@ -42,8 +45,7 @@ const Content = styled.section`
 
 const HeroImage = styled.p`
   position: relative;
-
-  background: #f9eec4;
+  background: ${props => props.theme.colors.blackLight};
   text-align: center;
   background-image: url("${svgPattern}");
   background-repeat: repeat;
@@ -52,7 +54,6 @@ const HeroImage = styled.p`
   display: flex;
   align-items: center;
   justify-content: center;
-
   .emoji {
     width: 110px;
     height: 110px;
@@ -60,9 +61,9 @@ const HeroImage = styled.p`
 `;
 
 const ContentMain = styled.div`
-  padding: 1.8em 2.5em;
+  padding: 1.8em ${props => props.theme.sideSpace.contentLarge};
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
-    padding: 30px 20px;
+    padding: 30px ${props => props.theme.sideSpace.contentSmall};
   }
 `;
 
@@ -70,6 +71,7 @@ const PostTitle = styled.h1`
   margin: 0.1em 0 0.3em;
   font-size: 1.9em;
   font-weight: 600;
+  line-height: 1.5;
 `;
 
 const PostDate = styled.time`
@@ -80,12 +82,8 @@ const PostDate = styled.time`
 `;
 
 const PostContent = styled.div`
-  margin: 1em 0;
-  line-height: 1.9;
-  font-size: 17px;
-  a:hover {
-    text-decoration: underline;
-  }
+  ${postSyntaxHighlightStyle}
+  ${postContentStyle}
 `;
 
 class BlogPostTemplate extends React.Component {

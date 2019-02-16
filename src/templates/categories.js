@@ -5,29 +5,14 @@ import SEO from "../components/SEO";
 import PostCard from "../components/PostCard";
 import CategoryMenu from "../components/CategoryMenu";
 import styled from "styled-components";
-import svgHeadingBar from "../svg/others/heading-bar.svg";
 
 const Heading = styled.h1`
-position: relative;
-  margin: 0.5em 0 .8em;
-  // padding-left: 20px;
+  margin: 0.5em 0 0.8em;
   font-size: 32px;
   color: #fff;
   font-weight: 600;
   line-height: 44px;
   letter-spacing: 1px;
-  // &:before {
-  //   position: absolute;
-  //   top: 2px;
-  //   left: 0;
-  //   content: "";
-  //   display: inline-block;
-  //   width: 10px;
-  //   height: 40px;
-  //   background-image: url("${svgHeadingBar}");
-  //   background-size: contain;
-  //   background-repeat: no-repeat;
-  // }
 `;
 
 class CategoryTemplate extends React.Component {
