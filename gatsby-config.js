@@ -51,9 +51,16 @@ module.exports = {
         plugins: [
           `gatsby-remark-code-titles`,
           {
+            resolve: "gatsby-remark-embed-youtube",
+            options: {
+              width: 650,
+              height: 365
+            }
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590
+              maxWidth: 700
             }
           },
           {
@@ -137,6 +144,7 @@ module.exports = {
         output: `/sitemap.xml`
       }
     },
+    `gatsby-plugin-twitter`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`

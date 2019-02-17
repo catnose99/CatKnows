@@ -6,6 +6,8 @@ category: "design"
 emoji: "🍣"
 ---
 
+`youtube:https://www.youtube.com/embed/2Xc9gXyf2G4`
+
 😁
 Far far away, behind the word mountains, far from the countries Vokalia and
 Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
