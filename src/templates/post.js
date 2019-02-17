@@ -1,16 +1,19 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
+import Helmet from "react-helmet";
+import twemoji from "twemoji";
+import styled from "styled-components";
 
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import twemoji from "twemoji";
-import styled from "styled-components";
+import CategoryLabel from "../components/CategoryLabel";
+import PostJsonLd from "../components/json/PostJsonLd";
+
 import postSyntaxHighlightStyle from "../styles/postSyntaxHighlight";
 import postContentStyle from "../styles/postContent";
 import postCustomBlockStyle from "../styles/postCustomBlock";
+
 import svgPattern from "../svg/others/pattern.svg";
-import CategoryLabel from "../components/CategoryLabel";
-import PostJsonLd from "../components/json/PostJsonLd";
 
 const Content = styled.section`
   position: relative;
@@ -108,6 +111,12 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
+        <Helmet>
+          <link
+            rel="canonical"
+            href={`https://catnose.work${this.props.location.pathname}`}
+          />
+        </Helmet>
         <PostJsonLd
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
