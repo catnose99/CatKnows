@@ -8,6 +8,7 @@ import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import CategoryLabel from "../components/CategoryLabel";
 import PostJsonLd from "../components/json/PostJsonLd";
+import RelatedPosts from "../components/RelatedPosts";
 
 import postSyntaxHighlightStyle from "../styles/postSyntaxHighlight";
 import postContentStyle from "../styles/postContent";
@@ -103,8 +104,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site.siteMetadata.title;
-    const { previous, next } = this.props.pageContext;
-
+    const { previous, next, relatedPosts } = this.props.pageContext;
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -156,6 +156,7 @@ class BlogPostTemplate extends React.Component {
               </li>
             </ul>
           </ContentMain>
+          <RelatedPosts posts={relatedPosts} />
         </Content>
       </Layout>
     );

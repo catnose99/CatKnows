@@ -18,6 +18,8 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                date(formatString: "YYYY.MM.DD")
+                emoji
                 category
               }
             }
@@ -31,24 +33,8 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
     const posts = result.data.allMarkdownRemark.edges;
-    // Create blog posts pages.
-    posts.forEach((post, index) => {
-      const previous =
-        index === posts.length - 1 ? null : posts[index + 1].node;
-      const next = index === 0 ? null : posts[index - 1].node;
 
-      createPage({
-        path: post.node.fields.slug,
-        component: path.resolve(`./src/templates/post.js`),
-        context: {
-          slug: post.node.fields.slug,
-          previous,
-          next
-        }
-      });
-    });
-
-    // Create tag posts pages
+    // Create category posts pages
     // ref: https://www.gatsbyjs.org/docs/adding-tags-and-categories-to-blog-posts/
     let categories = [];
     posts.forEach(post => {
@@ -63,6 +49,43 @@ exports.createPages = ({ graphql, actions }) => {
         component: path.resolve("src/templates/categories.js"),
         context: {
           category
+        }
+      });
+    });
+
+    // get related Posts(retrive maximum 5 posts for each category)
+    let allRelatedPosts = {};
+    categories.forEach(category => {
+      let categoryPosts = posts.filter(post => {
+        return post.node.frontmatter.category === category;
+      });
+      allRelatedPosts[category] = categoryPosts
+        ? categoryPosts.slice(0, 5)
+        : [];
+    });
+
+    // Create blog posts pages.
+    posts.forEach((post, index) => {
+      const previous =
+        index === posts.length - 1 ? null : posts[index + 1].node;
+      const next = index === 0 ? null : posts[index - 1].node;
+
+      // setup related posts
+      // get the posts that has same categories.
+      let relatedPosts = allRelatedPosts[post.node.frontmatter.category];
+      // remove myself
+      relatedPosts = relatedPosts.filter(relatedPost => {
+        return !(relatedPost.node.fields.slug === post.node.fields.slug);
+      });
+
+      createPage({
+        path: post.node.fields.slug,
+        component: path.resolve(`./src/templates/post.js`),
+        context: {
+          slug: post.node.fields.slug,
+          previous,
+          next,
+          relatedPosts
         }
       });
     });
