@@ -131,13 +131,13 @@ const CategoryMenu = ({ location }) => {
         <CategoryLink
           catName="Idea"
           catIcon={svgIdea}
-          catLink="/idea"
+          catLink="/category/idea"
           path={path}
         />
         <CategoryLink
           catName="Collect"
           catIcon={svgCollection}
-          catLink="/collect"
+          catLink="/category/collect"
           path={path}
         />
       </CategoryItemList>
