@@ -32,12 +32,16 @@ const SEO = ({ description, lang, meta, title }) => {
                 content: metaDescription
               },
               {
+                property: `og:image`,
+                content: `${data.site.siteMetadata.siteUrl}/images/ogp.png`
+              },
+              {
                 property: `og:type`,
                 content: `website`
               },
               {
                 name: `twitter:card`,
-                content: `summary`
+                content: `summary_large_image`
               },
               {
                 name: `twitter:creator`,
@@ -78,6 +82,7 @@ const detailsQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
         description
         author
       }
