@@ -60,3 +60,14 @@ You can use lists like this
 | - Don't each to much.
 | - Don't stay home.
 ```
+
+### Ads
+
+When to add ads(e.g. Google Adsense) on your site,
+make sure the ads are shown only on production.
+
+```
+if(process.env.NODE_ENV === "production") {
+  // Ads here
+}
+```
