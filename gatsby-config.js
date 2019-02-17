@@ -126,6 +126,12 @@ module.exports = {
         icon: `content/assets/avatar.png`
       }
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-134661352-1"
+      }
+    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`
