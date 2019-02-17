@@ -160,11 +160,11 @@ const SyntaxHighlightStyle = css`
   /* Inline code */
   p > code {
     display: inline-block;
-    background: #e3f1ff;
+    background: #edf2f7;
     padding: 0.1em 0.3em;
-    border-radius: 2px;
+    border-radius: 3px;
     line-height: 1.4;
-    color: #3f558a !important;
+    color: #454e63 !important;
   }
 `;
 

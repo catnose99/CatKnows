@@ -10,6 +10,7 @@ import postContentStyle from "../styles/postContent";
 import postCustomBlockStyle from "../styles/postCustomBlock";
 import svgPattern from "../svg/others/pattern.svg";
 import CategoryLabel from "../components/CategoryLabel";
+import PostJsonLd from "../components/json/PostJsonLd";
 
 const Content = styled.section`
   position: relative;
@@ -106,6 +107,13 @@ class BlogPostTemplate extends React.Component {
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
+        />
+        <PostJsonLd
+          title={post.frontmatter.title}
+          description={post.frontmatter.description || post.excerpt}
+          date={post.frontmatter.date}
+          url={this.props.location.href}
+          categorySlug={post.frontmatter.category}
         />
         <Content>
           <HeroImage

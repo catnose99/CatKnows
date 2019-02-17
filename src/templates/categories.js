@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import PostCard from "../components/PostCard";
 import CategoryMenu from "../components/CategoryMenu";
+import CategoryJsonLd from "../components/json/CategoryJsonLd";
 import styled from "styled-components";
 
 const Heading = styled.h1`
@@ -21,18 +22,22 @@ class CategoryTemplate extends React.Component {
     const posts = data.allMarkdownRemark.edges;
     const { location } = this.props;
     // get Category name from category slug
-    const catSlug = pageContext.category;
-    const catObject = data.site.siteMetadata.categories.find(cat => {
-      return cat.slug === catSlug;
+    const categorySlug = pageContext.category;
+    const categoryObject = data.site.siteMetadata.categories.find(cat => {
+      return cat.slug === categorySlug;
     });
     // use slug when name doesn't exist
-    const catName = catObject ? catObject.name : catSlug;
+    const categoryName = categoryObject ? categoryObject.name : categorySlug;
 
     return (
-      <Layout location={this.props.location} title={catName}>
-        <SEO title={catName} />
+      <Layout location={this.props.location} title={categoryName}>
+        <SEO title={categoryName} />
+        <CategoryJsonLd
+          categorySlug={categorySlug}
+          categoryName={categoryName}
+        />
         <CategoryMenu location={location} />
-        <Heading>{catName}</Heading>
+        <Heading>{categoryName}</Heading>
         {posts.map(({ node }) => {
           return <PostCard key={node.fields.slug} node={node} />;
         })}
