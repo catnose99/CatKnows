@@ -2,10 +2,9 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import twemoji from "twemoji";
-import CategoryLabel from "../components/CategoryLabel";
+import CategoryLabel from "./CategoryLabel";
 
 const Wrapper = styled.div`
-  margin: 2em 0 0;
   background: ${props => props.theme.colors.whitesmoke};
   padding: 2em ${props => props.theme.sideSpace.contentLarge};
   @media screen and (max-width: ${props => props.theme.responsive.small}) {

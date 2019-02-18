@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import Helmet from "react-helmet";
 import twemoji from "twemoji";
 import styled from "styled-components";
@@ -9,6 +9,8 @@ import SEO from "../components/SEO";
 import CategoryLabel from "../components/CategoryLabel";
 import PostJsonLd from "../components/json/PostJsonLd";
 import RelatedPosts from "../components/RelatedPosts";
+import ShareButtons from "../components/ShareButtons";
+import FollowBudge from "../components/FollowBudge";
 
 import postSyntaxHighlightStyle from "../styles/postSyntaxHighlight";
 import postContentStyle from "../styles/postContent";
@@ -104,13 +106,11 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site.siteMetadata.title;
-    const { previous, next, relatedPosts } = this.props.pageContext;
+    const { relatedPosts, slug } = this.props.pageContext;
+    const { title, description, date, category, emoji } = post.frontmatter;
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
-        />
+        <SEO title={title} description={description || post.excerpt} />
         <Helmet>
           <link
             rel="canonical"
@@ -118,45 +118,32 @@ class BlogPostTemplate extends React.Component {
           />
         </Helmet>
         <PostJsonLd
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
-          date={post.frontmatter.date}
+          title={title}
+          description={description || post.excerpt}
+          date={date}
           url={this.props.location.href}
-          categorySlug={post.frontmatter.category}
+          categorySlug={category}
         />
         <Content>
           <HeroImage
             dangerouslySetInnerHTML={{
-              __html: twemoji.parse(post.frontmatter.emoji || "😺", {
+              __html: twemoji.parse(emoji || "😺", {
                 folder: "svg",
                 ext: ".svg"
               })
             }}
           />
           <ContentMain>
-            <PostDate>{post.frontmatter.date}</PostDate>
-            <PostTitle>{post.frontmatter.title}</PostTitle>
-            <CategoryLabel slug={post.frontmatter.category} isLink="true" />
+            <PostDate>{date}</PostDate>
+            <PostTitle>{title}</PostTitle>
+            <CategoryLabel slug={category} isLink="true" />
             <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
-
-            <ul>
-              <li>
-                {previous && (
-                  <Link to={previous.fields.slug} rel="prev">
-                    ← {previous.frontmatter.title}
-                  </Link>
-                )}
-              </li>
-              <li>
-                {next && (
-                  <Link to={next.fields.slug} rel="next">
-                    {next.frontmatter.title} →
-                  </Link>
-                )}
-              </li>
-            </ul>
+            <FollowBudge />
           </ContentMain>
-          <RelatedPosts posts={relatedPosts} />
+          <aside>
+            <ShareButtons slug={slug} title={title} />
+            <RelatedPosts posts={relatedPosts} />
+          </aside>
         </Content>
       </Layout>
     );
