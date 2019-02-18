@@ -29,7 +29,7 @@ const SyntaxHighlightStyle = css`
     }
   }
   pre[class*="language-"] {
-    padding: 1.1em ${boxPaddingSide};
+    padding: 26px ${boxPaddingSide};
     overflow: auto;
   }
 
@@ -138,24 +138,29 @@ const SyntaxHighlightStyle = css`
 
   /*gatsby-remark-code-titles*/
   .gatsby-code-title {
-    margin-top: 1.5em;
-    background: ${props => props.theme.colors.background};
+    position: relative;
+    margin: 1.5em 0 -24px auto;
+    background: #20242e;
     color: #fff;
-    font-size: 13px;
-    padding: 0.6em 0.7em;
-    line-height: 1;
+    font-size: 12px;
+    height: 24px;
+    padding: 0 8px;
+    line-height: 24px;
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
       Courier New, monospace;
     font-weight: 600;
-    border-radius: 4px 4px 0 0;
+    border-radius: 0 4px;
     display: table;
+    z-index: 2;
+    @media screen and (max-width: ${props => props.theme.responsive.small}) {
+      display: block;
+      border-radius: 0;
+      text-align: center;
+      margin: 0 -${props => props.theme.sideSpace.contentSmall};
+    }
   }
   .gatsby-code-title + .gatsby-highlight {
     margin-top: 0;
-    pre[class*="language-"],
-    :not(pre) > code[class*="language-"] {
-      border-radius: 0 4px 4px 4px;
-    }
   }
   /* Inline code */
   p > code {
