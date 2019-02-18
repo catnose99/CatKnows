@@ -23,9 +23,12 @@ You have to set post meta data in frontmatter(At the top of each markdown file).
 title: Example title
 date: "2019-01-28T22:40:32.169Z"
 description: "This text will be used as meta/og description"
-category: "design" //set just 1category
-emoji: "😁"  //converted to Twemoji and used as HeroImage
+category: "design"
+emoji: "😁"
 ```
+
+_cagegory: must be just 1 category_
+_emoji: converted to Twemoji and used as HeroImage_
 
 ### Custom Blocks
 
