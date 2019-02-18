@@ -66,9 +66,9 @@ exports.createPages = ({ graphql, actions }) => {
 
     // Create blog posts pages.
     posts.forEach((post, index) => {
-      const previous =
-        index === posts.length - 1 ? null : posts[index + 1].node;
-      const next = index === 0 ? null : posts[index - 1].node;
+      // const previous =
+      //   index === posts.length - 1 ? null : posts[index + 1].node;
+      // const next = index === 0 ? null : posts[index - 1].node;
 
       // setup related posts
       // get the posts that has same categories.
@@ -83,8 +83,6 @@ exports.createPages = ({ graphql, actions }) => {
         component: path.resolve(`./src/templates/post.js`),
         context: {
           slug: post.node.fields.slug,
-          previous,
-          next,
           relatedPosts
         }
       });
