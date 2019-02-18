@@ -14,6 +14,7 @@ const Wrapper = styled.div`
 const ShareTitle = styled.div`
   font-weight: 600;
   font-size: 1.2em;
+  letter-spacing: 0.05em;
 `;
 
 const ShareLinks = styled.div`

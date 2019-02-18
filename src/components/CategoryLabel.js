@@ -13,6 +13,10 @@ const Wrapper = styled.div`
     border-radius: 2px;
     font-weight: 600;
     color: #fff;
+    @media screen and (max-width: ${props => props.theme.responsive.large}) {
+      font-size: 11px;
+      padding: 2.5px 6px;
+    }
   }
 `;
 

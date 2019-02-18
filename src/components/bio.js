@@ -19,6 +19,9 @@ const BioWrapper = styled.div`
     margin: 2em 0;
     width: 100%;
   }
+  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+    padding: 1.3em 1em;
+  }
 
   .avatar {
     border-radius: 50%;

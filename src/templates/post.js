@@ -70,6 +70,9 @@ const HeroImage = styled.p`
     width: 110px;
     height: 110px;
   }
+  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+    min-height: 190px;
+  }
 `;
 
 const ContentMain = styled.div`

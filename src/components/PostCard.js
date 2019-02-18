@@ -14,6 +14,9 @@ const PostCardWrapper = styled.div`
     &:hover {
       background: ${props => props.theme.colors.blackLight};
     }
+    @media screen and (max-width: ${props => props.theme.responsive.large}) {
+      padding: 1em 0;
+    }
   }
 `;
 const PostCardEmoji = styled.p`
@@ -30,6 +33,14 @@ const PostCardEmoji = styled.p`
     width: 55px;
     height: 55px;
   }
+  @media screen and (max-width: ${props => props.theme.responsive.large}) {
+    width: 70px;
+    height: 70px;
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
 `;
 const PostCardContent = styled.div`
   width: calc(100% - 110px);
@@ -37,14 +48,23 @@ const PostCardContent = styled.div`
   h3 {
     font-size: 1.5em;
     font-weight: 600;
-    line-height: 1.45;
+    line-height: 1.4;
   }
   time {
     display: block;
-    margin-bottom: 0.1em;
+    margin-bottom: 0.2em;
     letter-spacing: 0.05em;
     font-size: 0.9em;
     color: ${props => props.theme.colors.gray};
+  }
+  @media screen and (max-width: ${props => props.theme.responsive.large}) {
+    padding-left: 15px;
+    h3 {
+      font-size: 17.5px;
+    }
+    time {
+      font-size: 12px;
+    }
   }
 `;
 

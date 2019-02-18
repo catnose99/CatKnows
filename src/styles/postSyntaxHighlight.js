@@ -153,10 +153,8 @@ const SyntaxHighlightStyle = css`
     display: table;
     z-index: 2;
     @media screen and (max-width: ${props => props.theme.responsive.small}) {
-      display: block;
       border-radius: 0;
-      text-align: center;
-      margin: 0 -${props => props.theme.sideSpace.contentSmall};
+      margin-right: -${props => props.theme.sideSpace.contentSmall};
     }
   }
   .gatsby-code-title + .gatsby-highlight {

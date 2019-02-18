@@ -3,7 +3,7 @@ import svgHeadingBar from "../svg/others/heading-bar.svg";
 import svgHeadingIcon from "../svg/others/heading-icon.svg";
 
 const postContentStyle = css`
-  margin: 1em 0;
+  margin: 1.5em 0 1em;
   line-height: 1.9;
 
   a:hover {
