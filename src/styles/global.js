@@ -35,7 +35,7 @@ const globalStyle = createGlobalStyle`
     line-height: 1.6;
     font-size: 100%;
     font-weight: 400;
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial, YuGothic, 'Yu Gothic', 游ゴシック体, '游ゴシック', "ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ", Meiryo,"MS ゴシック","MS Gothic",sans-serif;
+    font-family: "Open Sans", Arial, -apple-system, BlinkMacSystemFont, sans-serif;
   }
   article, aside, details, figcaption, figure,
   footer, header, hgroup, menu, nav, section {
