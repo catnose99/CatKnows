@@ -96,8 +96,11 @@ module.exports = {
                   classes: "notice",
                   title: "optional"
                 },
-                image: {
-                  classes: "image"
+                imageSmall: {
+                  classes: "image-small"
+                },
+                imageMedium: {
+                  classes: "image-medium"
                 }
               }
             }
