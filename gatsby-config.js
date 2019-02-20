@@ -95,6 +95,9 @@ module.exports = {
                 notice: {
                   classes: "notice",
                   title: "optional"
+                },
+                image: {
+                  classes: "image"
                 }
               }
             }
