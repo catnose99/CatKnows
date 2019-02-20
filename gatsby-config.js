@@ -19,8 +19,8 @@ module.exports = {
         color: "#f7615f"
       },
       {
-        name: "Idea",
-        slug: "idea",
+        name: "Self",
+        slug: "self",
         color: "#ffa22b"
       },
       {
