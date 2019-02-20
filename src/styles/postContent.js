@@ -160,7 +160,7 @@ const postContentStyle = css`
     }
   }
   .gatsby-resp-image-wrapper {
-    margin-top: 1em;
+    margin: 1em 0;
     box-shadow: 0 1px 3px rgba(0,0,0,.25);
     border-radius: 4px;
     overflow: hidden;

@@ -53,6 +53,23 @@ const postCustomBlockStyle = css`
       color: ${props => props.theme.colors.orange};
     }
   }
+  .custom-block.image-small,
+  .custom-block.image-medium {
+    background: ${props => props.theme.colors.blackLight};
+    padding: 1.5em;
+    text-align: center;
+    border-radius: 5px;
+    .gatsby-resp-image-wrapper {
+      margin: 0;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    }
+  }
+  .custom-block.image-small .gatsby-resp-image-wrapper {
+    max-width: 350px !important;
+  }
+  .custom-block.image-medium .gatsby-resp-image-wrapper {
+    max-width: 450px !important;
+  }
 `;
 
 export default postCustomBlockStyle;
