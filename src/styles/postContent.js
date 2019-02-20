@@ -105,6 +105,62 @@ const postContentStyle = css`
       }
     }
   }
+  strong {
+    font-weight: 600;
+  }
+  del {
+    text-decoration: line-through;
+  }
+  hr {
+    display: block;
+    margin: 2em 0;
+    border: none;
+    border-top: dotted 3px #e1eaf3;
+  }
+  table {
+    display: block;
+    border-spacing: 2px;
+    border-collapse: separate;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    width: auto;
+    line-height: 1.4;
+    th {
+      background-color: ${props => props.theme.colors.highlight};
+      color: #FFF;
+      padding: 12px 15px;
+      text-align: center;
+      &[align="center"] {
+        text-align: center;
+      }
+      &[align="right"] {
+        text-align: right;
+      }
+    }
+    td {
+      background-color:  ${props => props.theme.colors.whitesmoke};
+      color: ${props => props.theme.colors.blackLight};
+      padding: 10px 15px;
+    }
+    thead tr {
+      th:first-child {
+        border-radius: 5px 0 0 0;
+      }
+      th:last-child {
+        border-radius: 0 5px 0 0;
+      }
+    }
+    tbody tr:last-child {
+      td:first-child {
+        border-radius: 0 0 0 5px;
+      }
+      td:last-child {
+        border-radius: 0 0 5px 0;
+      }
+    }
+
+  }
+  
 `;
 
 export default postContentStyle;
