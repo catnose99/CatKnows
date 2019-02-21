@@ -132,7 +132,7 @@ const SyntaxHighlightStyle = css`
     min-width: calc(100% + ${boxPaddingSide} * 2);
     margin-right: -${boxPaddingSide};
     margin-left: -${boxPaddingSide};
-    padding-left: 5px;
+    padding-left: 12px;
     border-left: 5px solid #4cb4e6;
   }
 
