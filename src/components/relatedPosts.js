@@ -15,10 +15,12 @@ const PostCardWrapper = styled.div`
   .post-card-link {
     display: flex;
     align-items: center;
+    margin-bottom: 1em;
     padding: 15px;
     background: #fff;
     border-radius: 5px;
     color: ${props => props.theme.colors.blackLight};
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     &:hover {
       background: #e0ebf1;
     }
@@ -43,10 +45,10 @@ const PostCardEmoji = styled.p`
   }
 `;
 const PostCardContent = styled.div`
-  width: calc(100% - 110px);
-  padding-left: 20px;
+  width: calc(100% - 80px);
+  padding-left: 15px;
   h5 {
-    font-size: 1.25em;
+    font-size: 1.1em;
     font-weight: 600;
     line-height: 1.45;
   }
@@ -59,9 +61,8 @@ const PostCardContent = styled.div`
   }
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
     padding-left: 15px;
-    width: calc(100% - 80px);
     h5 {
-      font-size: 1.1em;
+      font-size: 1em;
     }
   }
 `;

@@ -45,16 +45,16 @@ const postContentStyle = css`
   }
   h4 {
     position: relative;
-    padding-left: 30px;
+    padding-left: 18px;
     font-size: 1em;
     &:before {
       position: absolute;
-      top: -2px;
+      top: .2em;
       left: 0;
       content: "";
       display: inline-block;
-      width: 25px;
-      height: 25px;
+      width: 14px;
+      height: 19px;
       background-image: url("${svgHeadingIcon}");
       background-size: contain;
       background-repeat: no-repeat;
@@ -108,6 +108,9 @@ const postContentStyle = css`
   strong {
     font-weight: 600;
   }
+  em {
+    font-style: italic;
+  }
   del {
     text-decoration: line-through;
   }
@@ -124,12 +127,14 @@ const postContentStyle = css`
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     width: auto;
+    font-size: .9em;
     line-height: 1.4;
     th {
       background-color: ${props => props.theme.colors.highlight};
       color: #FFF;
-      padding: 12px 15px;
+      padding: 10px 12px;
       text-align: center;
+      font-weight: 600;
       &[align="center"] {
         text-align: center;
       }
@@ -140,7 +145,7 @@ const postContentStyle = css`
     td {
       background-color:  ${props => props.theme.colors.whitesmoke};
       color: ${props => props.theme.colors.blackLight};
-      padding: 10px 15px;
+      padding: 10px 12px;
     }
     thead tr {
       th:first-child {

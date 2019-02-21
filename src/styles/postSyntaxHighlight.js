@@ -165,6 +165,7 @@ const SyntaxHighlightStyle = css`
     display: inline-block;
     background: #edf2f7;
     padding: 0.1em 0.3em;
+    margin: 0 0.2em;
     border-radius: 3px;
     line-height: 1.4;
     color: #454e63 !important;

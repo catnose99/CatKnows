@@ -43,7 +43,7 @@ const PostCardEmoji = styled.p`
   }
 `;
 const PostCardContent = styled.div`
-  width: calc(100% - 110px);
+  width: calc(100% - 90px);
   padding-left: 20px;
   h3 {
     font-size: 1.5em;
@@ -58,9 +58,10 @@ const PostCardContent = styled.div`
     color: ${props => props.theme.colors.gray};
   }
   @media screen and (max-width: ${props => props.theme.responsive.large}) {
+    width: calc(100% - 70px);
     padding-left: 15px;
     h3 {
-      font-size: 17.5px;
+      font-size: 16.5px;
     }
     time {
       font-size: 12px;
