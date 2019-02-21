@@ -2,6 +2,7 @@
 title: "CatKnowsマークダウン チートシート"
 date: "2019-02-21T22:12:03.284Z"
 category: "dev"
+description: "このブログで使っているマークダウン表現のチートシートです。"
 emoji: "🐣"
 ---
 
@@ -87,6 +88,19 @@ emoji: "🐣"
 -----
 ### コード
 
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">```css
+  body {
+    color: red;
+  }
+```
+</code></pre></div>
+
+```css:title=style.css
+  body {
+    color: red;
+  }
+```
+
 
 -----
 ### 画像
@@ -152,3 +166,20 @@ emoji: "🐣"
 ```
 
 -----
+### Youtube埋め込み
+```
+`youtube:https://www.youtube.com/embed/19R93fiKyRA`
+```
+
+`youtube:https://www.youtube.com/embed/19R93fiKyRA`
+
+### ツイート埋め込み
+```
+//scriptコードは除くこと
+<blockquote class="twitter-tweet" data-lang="ja">
+  <p lang="ja" dir="ltr">だれでも簡単に美しいWebポートフォリオを作成できるサービス RESUME（レジュメ）をリリースしました🎉<br><br>イラストレーター、カメラマン、デザイナー、エンジニアだけでなく、研究者、マーケターなどなど誰でも使えるサービスです！<br>ポートフォリオを作りたい人に届け〜<a href="https://t.co/DtTLqSqs7I">https://t.co/DtTLqSqs7I</a> <a href="https://t.co/Oq7ib0Um3k">pic.twitter.com/Oq7ib0Um3k</a></p>&mdash; CatNose😺 (@catnose99) <a href="https://twitter.com/catnose99/status/1090554889816555520?ref_src=twsrc%5Etfw">2019年1月30日</a>
+</blockquote>
+```
+<blockquote class="twitter-tweet" data-lang="ja">
+  <p lang="ja" dir="ltr">だれでも簡単に美しいWebポートフォリオを作成できるサービス RESUME（レジュメ）をリリースしました🎉<br><br>イラストレーター、カメラマン、デザイナー、エンジニアだけでなく、研究者、マーケターなどなど誰でも使えるサービスです！<br>ポートフォリオを作りたい人に届け〜<a href="https://t.co/DtTLqSqs7I">https://t.co/DtTLqSqs7I</a> <a href="https://t.co/Oq7ib0Um3k">pic.twitter.com/Oq7ib0Um3k</a></p>&mdash; CatNose😺 (@catnose99) <a href="https://twitter.com/catnose99/status/1090554889816555520?ref_src=twsrc%5Etfw">2019年1月30日</a>
+</blockquote>
