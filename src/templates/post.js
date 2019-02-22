@@ -117,7 +117,7 @@ class BlogPostTemplate extends React.Component {
         <Helmet>
           <link
             rel="canonical"
-            href={`https://catnose.work${this.props.location.pathname}`}
+            href={`https://catnose99.com${this.props.location.pathname}`}
           />
         </Helmet>
         <PostJsonLd
