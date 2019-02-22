@@ -45,16 +45,16 @@ const postContentStyle = css`
   }
   h4 {
     position: relative;
-    padding-left: 30px;
+    padding-left: 18px;
     font-size: 1em;
     &:before {
       position: absolute;
-      top: -2px;
+      top: .2em;
       left: 0;
       content: "";
       display: inline-block;
-      width: 25px;
-      height: 25px;
+      width: 14px;
+      height: 19px;
       background-image: url("${svgHeadingIcon}");
       background-size: contain;
       background-repeat: no-repeat;
@@ -104,6 +104,71 @@ const postContentStyle = css`
         background: ${props => props.theme.colors.highlight};
       }
     }
+  }
+  strong {
+    font-weight: 600;
+  }
+  em {
+    font-style: italic;
+  }
+  del {
+    text-decoration: line-through;
+  }
+  hr {
+    display: block;
+    margin: 2em 0;
+    border: none;
+    border-top: dotted 3px #e1eaf3;
+  }
+  table {
+    display: block;
+    border-spacing: 2px;
+    border-collapse: separate;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    width: auto;
+    font-size: .9em;
+    line-height: 1.4;
+    th {
+      background-color: ${props => props.theme.colors.highlight};
+      color: #FFF;
+      padding: 10px 12px;
+      text-align: center;
+      font-weight: 600;
+      &[align="center"] {
+        text-align: center;
+      }
+      &[align="right"] {
+        text-align: right;
+      }
+    }
+    td {
+      background-color:  ${props => props.theme.colors.whitesmoke};
+      color: ${props => props.theme.colors.blackLight};
+      padding: 10px 12px;
+    }
+    thead tr {
+      th:first-child {
+        border-radius: 5px 0 0 0;
+      }
+      th:last-child {
+        border-radius: 0 5px 0 0;
+      }
+    }
+    tbody tr:last-child {
+      td:first-child {
+        border-radius: 0 0 0 5px;
+      }
+      td:last-child {
+        border-radius: 0 0 5px 0;
+      }
+    }
+  }
+  .gatsby-resp-image-wrapper {
+    margin: 1em 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,.25);
+    border-radius: 4px;
+    overflow: hidden;
   }
 `;
 

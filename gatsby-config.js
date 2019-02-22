@@ -19,8 +19,8 @@ module.exports = {
         color: "#f7615f"
       },
       {
-        name: "Idea",
-        slug: "idea",
+        name: "Self",
+        slug: "self",
         color: "#ffa22b"
       },
       {
@@ -60,7 +60,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 700
+              maxWidth: 700,
+              linkImagesToOriginal: false
             }
           },
           {
@@ -94,6 +95,12 @@ module.exports = {
                 notice: {
                   classes: "notice",
                   title: "optional"
+                },
+                imageSmall: {
+                  classes: "image-small"
+                },
+                imageMedium: {
+                  classes: "image-medium"
                 }
               }
             }

@@ -144,7 +144,7 @@ class BlogPostTemplate extends React.Component {
             <FollowBudge />
           </ContentMain>
           <aside>
-            <ShareButtons slug={slug} title={title} />
+            <ShareButtons slug={slug} title={title} emoji={emoji} />
             <RelatedPosts posts={relatedPosts} />
           </aside>
         </Content>

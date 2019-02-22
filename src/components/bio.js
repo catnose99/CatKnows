@@ -8,7 +8,8 @@ import svgResume from "../svg/socials/resume.svg";
 import svgEmail from "../svg/socials/email.svg";
 
 const BioWrapper = styled.div`
-  position: relative;
+  position: sticky;
+  top: 2em;
   width: ${props => props.theme.sizes.bioWidth};
   padding: 1.5em;
   font-size: 15.5px;
@@ -16,6 +17,7 @@ const BioWrapper = styled.div`
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   @media screen and (max-width: ${props => props.theme.responsive.large}) {
+    position: relative;
     margin: 2em 0;
     width: 100%;
   }

@@ -5,7 +5,7 @@ import svgNew from "../svg/categories/new.svg";
 import svgDesign from "../svg/categories/design.svg";
 import svgDev from "../svg/categories/dev.svg";
 import svgCollection from "../svg/categories/collection.svg";
-import svgIdea from "../svg/categories/idea.svg";
+import svgSelf from "../svg/categories/self.svg";
 
 const Nav = styled.nav`
   display: block;
@@ -129,9 +129,9 @@ const CategoryMenu = ({ location }) => {
           path={path}
         />
         <CategoryLink
-          catName="Idea"
-          catIcon={svgIdea}
-          catLink="/category/idea"
+          catName="Self"
+          catIcon={svgSelf}
+          catLink="/category/self"
           path={path}
         />
         <CategoryLink

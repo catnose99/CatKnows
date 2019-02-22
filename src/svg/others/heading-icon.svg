@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" viewBox="0 0 45 45" style="enable-background:new 0 0 45 45;" xml:space="preserve">
+	 y="0px" viewBox="0 0 30 45" style="enable-background:new 0 0 30 45;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#6FD4F7;enable-background:new    ;}
-	.st1{fill:#313746;}
-	.st2{opacity:0.8;fill:#239DF9;enable-background:new    ;}
+	.st0{fill:#F7645C;}
+	.st1{fill:#FFA748;}
 </style>
 <title>icon</title>
-<g transform="translate(312, 312)">
-	<path class="st0" d="M-275.8-291.3l-12-12c-0.3-0.3-0.7-0.4-1.1-0.2l-17,7c-0.3,0.1-0.6,0.4-0.6,0.8l-4,26c0,0.3,0.1,0.6,0.3,0.9
-		c0.2,0.2,0.4,0.3,0.7,0.3c0,0,0.1,0,0.2,0l26-4c0.3-0.1,0.6-0.3,0.8-0.6l7-17C-275.4-290.6-275.5-291-275.8-291.3z"/>
-	<path class="st1" d="M-268.8-293.3l-17-17c-0.4-0.4-1-0.4-1.4,0l-4.5,4.5c-0.4,0.4-0.4,1,0,1.4l17,17c0.2,0.2,0.5,0.3,0.7,0.3
-		s0.5-0.1,0.7-0.3l4.5-4.5C-268.4-292.3-268.4-292.9-268.8-293.3z"/>
-	<path class="st2" d="M-292.7-286.4c-1.6-1.6-4.1-1.6-5.7,0c-1.3,1.3-1.5,3.3-0.6,4.8l-11.2,11.3c-0.4,0.4-0.4,1,0,1.4
-		c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3l11.3-11.3c1.5,0.9,3.5,0.7,4.9-0.6C-291.1-282.3-291.1-284.9-292.7-286.4z"/>
-</g>
+<path class="st0" d="M28.1,30.1c0,7.5-6.1,13.6-13.6,13.6S0.9,37.7,0.9,30.1S7,16.5,14.5,16.5S28.1,22.6,28.1,30.1z"/>
+<path class="st1" d="M28.1,15.6c0,7.5-6.1,13.6-13.6,13.6S0.9,23.1,0.9,15.6S7,2,14.5,2S28.1,8.1,28.1,15.6z"/>
 </svg>

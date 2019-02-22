@@ -32,6 +32,13 @@ _emoji: converted to Twemoji and used as HeroImage_
 
 ### Custom Blocks
 
+#### Gray colored block
+
+```
+[[simple | title here]]
+| content here
+```
+
 #### Info block
 
 ```

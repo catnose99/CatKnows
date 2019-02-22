@@ -6,6 +6,7 @@ const Wrapper = styled.div`
   margin: 0 0 2.5em;
   padding: 0 ${props => props.theme.sideSpace.contentLarge};
   text-align: center;
+  color: ${props => props.theme.colors.blackLight};
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
     padding: 0 ${props => props.theme.sideSpace.contentSmall};
   }
@@ -29,7 +30,7 @@ const ShareLink = styled.a`
   line-height: 40px;
   border-radius: 50%;
   color: #fff;
-  background: ${props => props.theme.colors.background};
+  background: ${props => props.theme.colors.blackLight};
   font-weight: 600;
   vertical-align: middle;
   &:hover {
@@ -43,12 +44,17 @@ const GitHubLink = styled.a`
   color: ${props => props.theme.colors.silver};
 `;
 
-const ShareButtons = ({ slug, title }) => {
+const ShareButtons = ({ slug, title, emoji }) => {
+  const encodedTitle = encodeURIComponent(`${emoji}${title} | CatKnows`);
+  const pageUrl = `https://catnose.work${slug}`;
   return (
     <Wrapper>
       <ShareTitle>SHARE</ShareTitle>
       <ShareLinks>
-        <ShareLink href="" rel="nofllow">
+        <ShareLink
+          href={`https://twitter.com/share?url=${pageUrl}&text=${encodedTitle}&via=catnose99`}
+          rel="nofllow"
+        >
           <img
             src={svgTwitterWhite}
             alt="Twitter"
@@ -59,10 +65,18 @@ const ShareButtons = ({ slug, title }) => {
             }}
           />
         </ShareLink>
-        <ShareLink href="" style={{ fontSize: "20px" }} rel="nofllow">
+        <ShareLink
+          href={`https://www.facebook.com/share.php?u=${pageUrl}`}
+          style={{ fontSize: "20px" }}
+          rel="nofllow"
+        >
           f
         </ShareLink>
-        <ShareLink href="" style={{ fontSize: "19px" }} rel="nofllow">
+        <ShareLink
+          href={`http://b.hatena.ne.jp/add?mode=confirm&url=${pageUrl}`}
+          style={{ fontSize: "19px" }}
+          rel="nofllow"
+        >
           B!
         </ShareLink>
       </ShareLinks>

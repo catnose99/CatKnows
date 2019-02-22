@@ -4,7 +4,20 @@ date: "2015-05-01T22:12:03.284Z"
 category: "design"
 ---
 
-This is my first post on my new fake blog! How exciting!
+| Left align | Right align | Center align |
+| :--------- | ----------: | :----------: |
+| This       |        This |     This     |
+| column     |      column |    column    |
+| will       |        will |     will     |
+| be         |          be |      be      |
+| left       |       right |    center    |
+| aligned    |     aligned |   aligned    |
+
+---
+
+> これが
+
+This is **my first post** on my new fake ~~blog!~~ How exciting!
 
 I'm sure I'll write a lot more interesting things in the future.
 
