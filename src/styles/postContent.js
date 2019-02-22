@@ -23,7 +23,7 @@ const postContentStyle = css`
   }
   h2 {
     position: relative;
-    margin: 45px 0 12px;
+    margin: 55px 0 12px;
     padding-left: 15px;
     font-size: 1.5em;
     &:before {
