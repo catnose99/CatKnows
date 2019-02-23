@@ -49,7 +49,7 @@ class CategoryTemplate extends React.Component {
 export default CategoryTemplate;
 
 export const pageQuery = graphql`
-  query($category: String) {
+  query BlogPostByCategory($category: String) {
     site {
       siteMetadata {
         categories {
