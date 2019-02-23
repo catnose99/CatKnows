@@ -24,11 +24,12 @@ const BioWrapper = styled.div`
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
     padding: 1.3em 1em;
   }
-
-  .avatar {
-    border-radius: 50%;
-  }
 `;
+
+const AvatarImage = styled(Image)`
+  border-radius: 50%;
+`;
+
 const BioHeader = styled.div`
   display: flex;
   align-items: center;
@@ -83,10 +84,9 @@ const Bio = () => {
         return (
           <BioWrapper>
             <BioHeader>
-              <Image
+              <AvatarImage
                 fixed={data.avatar.childImageSharp.fixed}
                 alt={author}
-                className="avatar"
               />
               <BioName>
                 <a href={`https://twitter.com/${social.twitter}`}>{author}</a>
