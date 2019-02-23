@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "CatNose <catnose99@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/catnose99/CatKnows/issues"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
@@ -31,6 +31,7 @@
     "gatsby-source-filesystem": "^2.0.20",
     "gatsby-transformer-remark": "^2.2.4",
     "gatsby-transformer-sharp": "^2.1.13",
+    "netlify-cli": "^2.8.0",
     "prismjs": "^1.15.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
@@ -39,7 +40,7 @@
     "twemoji": "^11.3.0",
     "typeface-open-sans": "^0.0.54"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/catnose99/CatKnows",
   "keywords": [
     "gatsby"
   ],
