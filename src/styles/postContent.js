@@ -23,8 +23,8 @@ const postContentStyle = css`
   h2 {
     position: relative;
     margin: 55px 0 12px;
-    padding-left: 15px;
-    font-size: 1.5em;
+    padding: 5px 0 5px 17px;
+    font-size: 1.4em;
     &:before {
       position: absolute;
       top: 0;
@@ -33,7 +33,7 @@ const postContentStyle = css`
       display: inline-block;
       width: 5px;
       height: 100%;
-      border-radius: 3px;
+      border-radius: 5px;
       background: linear-gradient(0deg,#ffa649 0% ,#ffa649 50%,#f7645b 50%,#f7645b 100%);
     }
   }
