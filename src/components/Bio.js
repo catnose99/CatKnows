@@ -48,7 +48,7 @@ const BioMain = styled.div`
 `;
 const BioText = styled.p`
   color: #fff;
-  font-size: 0.95em;
+  font-size: 0.92em;
 `;
 const BioLinks = styled.div`
   margin-top: 1.5em;
@@ -96,7 +96,7 @@ const Bio = () => {
             </BioHeader>
             <BioMain>
               <BioText>
-                フリーのデザイナー/フロントエンドエンジニア/ライター。自分のペースでWebサービスやWebサイトを作っています。詳しくはRESUME
+                デザイナー/フロントエンドエンジニア。自分のペースでWebサービスやWebサイトを作っています。詳しくはRESUME
                 <span role="img" aria-label="下">
                   👇
                 </span>
