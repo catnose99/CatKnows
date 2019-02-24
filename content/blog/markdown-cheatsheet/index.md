@@ -105,25 +105,25 @@ emoji: "🐣"
 -----
 ### 画像
 ```
-![画像サンプル](./image.jpg)
+![sampleAlt](./image.jpg)
 ```
 
-![画像サンプル](./image.jpg)
+![sampleAlt](./image.jpg)
 
 画像ファイルは投稿のindex.mdと同フォルダ内に配置する
 #### 画像のサイズ調整
 ```
 [[imageMedium]]
-| ![画像中](./image.jpg)
+| ![alt](./image.jpg)
 
 [[imageSmall]]
-| ![画像小](./image.jpg)
+| ![alt](./image.jpg)
 ```
 [[imageMedium]]
-| ![画像中](./image.jpg)
+| ![alt](./image.jpg)
 
 [[imageSmall]]
-| ![画像小](./image.jpg)
+| ![alt](./image.jpg)
 
 -----
 ### ボックス

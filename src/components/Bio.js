@@ -26,7 +26,11 @@ const BioWrapper = styled.div`
   }
 `;
 
-const AvatarImage = styled(Image)`
+const AvatarImage = styled.a`
+  display: block;
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
   border-radius: 50%;
 `;
 
@@ -86,21 +90,16 @@ const Bio = () => {
         return (
           <BioWrapper>
             <BioHeader>
-              <AvatarImage
-                fixed={data.avatar.childImageSharp.fixed}
-                alt={author}
-              />
+              <AvatarImage>
+                <Image fixed={data.avatar.childImageSharp.fixed} alt={author} />
+              </AvatarImage>
               <BioName>
                 <a href={`https://twitter.com/${social.twitter}`}>{author}</a>
               </BioName>
             </BioHeader>
             <BioMain>
               <BioText>
-                デザイナー/フロントエンドエンジニア。自分のペースでWebサービスやWebサイトを作っています。詳しくはRESUME
-                <span role="img" aria-label="下">
-                  👇
-                </span>
-                を見てね。
+                デザイナー/フロントエンドエンジニア。自分のペースでWebサービスやWebサイトを作っています。詳しくはRESUMEで。
               </BioText>
               <BioLinks>
                 <BioLink href="https://www.resume.id/catnose99">
