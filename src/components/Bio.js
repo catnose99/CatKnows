@@ -1,8 +1,8 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
-import Image from "gatsby-image";
 import styled from "styled-components";
 
+import svgAvatar from "../svg/avatar.svg";
 import svgTwitter from "../svg/socials/twitter.svg";
 import svgResume from "../svg/socials/resume.svg";
 import svgEmail from "../svg/socials/email.svg";
@@ -26,11 +26,10 @@ const BioWrapper = styled.div`
   }
 `;
 
-const AvatarImage = styled.a`
+const AvatarImage = styled.img`
   display: block;
   width: 70px;
   height: 70px;
-  overflow: hidden;
   border-radius: 50%;
 `;
 
@@ -90,16 +89,14 @@ const Bio = () => {
         return (
           <BioWrapper>
             <BioHeader>
-              <AvatarImage>
-                <Image fixed={data.avatar.childImageSharp.fixed} alt={author} />
-              </AvatarImage>
+              <AvatarImage src={svgAvatar} alt={author} />
               <BioName>
                 <a href={`https://twitter.com/${social.twitter}`}>{author}</a>
               </BioName>
             </BioHeader>
             <BioMain>
               <BioText>
-                デザイナー/フロントエンドエンジニア。自分のペースでWebサービスやWebサイトを作っています。詳しくはRESUMEで。
+                デザイナー/フロントエンドエンジニア。自分のペースでWebサービスやWebサイトを作っています。詳しくはRESUMEをどうぞ。
               </BioText>
               <BioLinks>
                 <BioLink href="https://www.resume.id/catnose99">
