@@ -96,7 +96,11 @@ const Bio = () => {
             </BioHeader>
             <BioMain>
               <BioText>
-                フリーのデザイナー/フロントエンドエンジニア/ライター。自分のペースでWebサービスやWebサイトを作っています。詳しくはRESUME👇を見てね。
+                フリーのデザイナー/フロントエンドエンジニア/ライター。自分のペースでWebサービスやWebサイトを作っています。詳しくはRESUME
+                <span role="img" aria-label="下">
+                  👇
+                </span>
+                を見てね。
               </BioText>
               <BioLinks>
                 <BioLink href="https://www.resume.id/catnose99">

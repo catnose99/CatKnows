@@ -1,5 +1,4 @@
 import { css } from "styled-components";
-import svgHeadingBar from "../svg/others/heading-bar.svg";
 import svgHeadingIcon from "../svg/others/heading-icon.svg";
 
 const postContentStyle = css`
@@ -32,11 +31,10 @@ const postContentStyle = css`
       left: 0;
       content: "";
       display: inline-block;
-      width: 10px;
-      height: 40px;
-      background-image: url("${svgHeadingBar}");
-      background-size: contain;
-      background-repeat: no-repeat;
+      width: 5px;
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(0deg,#ffa649 0% ,#ffa649 50%,#f7645b 50%,#f7645b 100%);
     }
   }
   h3 {
