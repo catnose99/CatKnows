@@ -38,7 +38,7 @@ const ShareButtons = () => {
     <Follow>
       <FollowLink href="https://twitter.com/catnose99" rel="nofollow">
         <img src={svgTwitterWhite} alt="Twitter" />
-        <div className="follow-link-text">Follow @catnose99</div>
+        <div className="follow-link-text">@catnose99をフォロー</div>
       </FollowLink>
     </Follow>
   );

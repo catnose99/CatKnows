@@ -1,39 +1,33 @@
 ---
-title: Hello Worlds
-date: "2015-05-01T22:12:03.284Z"
-category: "design"
+title: "新しいブログをはじめたよ"
+date: "2015-05-01T19:12:03.284Z"
+category: "self"
 ---
 
-| Left align | Right align | Center align |
-| :--------- | ----------: | :----------: |
-| This       |        This |     This     |
-| column     |      column |    column    |
-| will       |        will |     will     |
-| be         |          be |      be      |
-| left       |       right |    center    |
-| aligned    |     aligned |   aligned    |
+何かを書きたくなったときに、気軽に書けるようにこのブログをつくった。
 
----
+## 書きたいときに書きたいことを
+考えたことや感動したこと、主張したいことを、書きたくなったときに書く場所がほしかった。
+誰の役に立つか分からないような情報まで、ダラダラとこのブログに書き残す。
+記事のテーマもごちゃまぜ。とにかく書きたいときに書きたいことを書くつもり。
 
-> これが
+## 技術記事をストレスなく書きたかった
+マークダウンで技術的な話をさくっと書き残すとき、ローカルのエディター（VSCode）上で書きたかった。
+その方がいくつものタブを開かなくても良くて気軽だし、サービスのUIに慣れられるし、自分の書きやすいように気軽にカスタマイズできる。
+この辺りについては[ブログ執筆を効率化するための工夫](/blazing-fast-writing)に少し詳しく書いた。
 
-This is **my first post** on my new fake ~~blog!~~ How exciting!
+## Gatsby.jsを使いたかった
+Gatsby.jsを以前に触ったとき、Reactで自分の好きなようにカスタマイズできるのが嬉しかった。
+試してみたいデザインや表現もあった。
+そんなわけで、このブログを開設した。
 
-I'm sure I'll write a lot more interesting things in the future.
+## デザイン的なこだわり
+[[imageSmall]]
+| ![カテゴリータブ](2019-02-24-17-19-03.png)
+カテゴリーはInstagramのように円形で表現してみた。ダークな背景に赤・青・橙の図形なんかを組み合わせて、ポップな雰囲気が感じられるデザインにしてみた。選択中のカテゴリーのアイコンにはグラデーションの枠がつくのだけど、よく見るとアニメーションがかかっている。深い意味はなくて、やってみたかっただけ。
 
-Oh, and here's a great quote from this Wikipedia on
-[salted duck eggs](http://en.wikipedia.org/wiki/Salted_duck_egg).
 
-> A salted duck egg is a Chinese preserved food product made by soaking duck
-> eggs in brine, or packing each egg in damp, salted charcoal. In Asian
-> supermarkets, these eggs are sometimes sold covered in a thick layer of salted
-> charcoal paste. The eggs may also be sold with the salted paste removed,
-> wrapped in plastic, and vacuum packed. From the salt curing process, the
-> salted duck eggs have a briny aroma, a gelatin-like egg white and a
-> firm-textured, round yolk that is bright orange-red in color.
+[[imageSmall]]
+| ![サムネイル画像](2019-02-24-17-25-17.png)
+アイキャッチ画像には絵文字を使っている。記事ごとに絵文字を選ぶだけ。アイキャッチ画像を記事ごとに作る必要なし。
 
-![Chinese Salty Egg](./salty_egg.jpg)
-
-ここに :smile:
-ここに 😉
-:smiley_cat: :smile_cat:

@@ -1,5 +1,4 @@
 import { css } from "styled-components";
-import svgHeadingBar from "../svg/others/heading-bar.svg";
 import svgHeadingIcon from "../svg/others/heading-icon.svg";
 
 const postContentStyle = css`
@@ -24,19 +23,18 @@ const postContentStyle = css`
   h2 {
     position: relative;
     margin: 55px 0 12px;
-    padding-left: 15px;
-    font-size: 1.5em;
+    padding: 5px 0 5px 17px;
+    font-size: 1.4em;
     &:before {
       position: absolute;
       top: 0;
       left: 0;
       content: "";
       display: inline-block;
-      width: 10px;
-      height: 40px;
-      background-image: url("${svgHeadingBar}");
-      background-size: contain;
-      background-repeat: no-repeat;
+      width: 5px;
+      height: 100%;
+      border-radius: 5px;
+      background: linear-gradient(0deg,#ffa649 0% ,#ffa649 50%,#f7645b 50%,#f7645b 100%);
     }
   }
   h3 {
@@ -166,7 +164,7 @@ const postContentStyle = css`
   }
   .gatsby-resp-image-wrapper {
     margin: 1em 0;
-    box-shadow: 0 1px 3px rgba(0,0,0,.25);
+    box-shadow: 0 2px 4px rgba(0,0,0,.25);
     border-radius: 4px;
     overflow: hidden;
   }

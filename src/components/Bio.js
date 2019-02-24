@@ -24,11 +24,12 @@ const BioWrapper = styled.div`
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
     padding: 1.3em 1em;
   }
-
-  .avatar {
-    border-radius: 50%;
-  }
 `;
+
+const AvatarImage = styled(Image)`
+  border-radius: 50%;
+`;
+
 const BioHeader = styled.div`
   display: flex;
   align-items: center;
@@ -47,6 +48,7 @@ const BioMain = styled.div`
 `;
 const BioText = styled.p`
   color: #fff;
+  font-size: 0.92em;
 `;
 const BioLinks = styled.div`
   margin-top: 1.5em;
@@ -54,23 +56,24 @@ const BioLinks = styled.div`
   color: #fff;
   text-align: center;
   max-width: 244px;
-  .bio-link {
-    width: 33.3%;
-    display: block;
-    font-weight: 600;
-    font-size: 0.9em;
-    line-height: 30px;
-    color: ${props => props.theme.colors.gray};
-    letter-spacing: 0.5px;
-    &:hover {
-      color: ${props => props.theme.colors.highlight};
-    }
-  }
   img {
     display: block;
     margin: 0 auto;
     width: 40px;
     height: 33px;
+  }
+`;
+
+const BioLink = styled.a`
+  width: 33.3%;
+  display: block;
+  font-weight: 600;
+  font-size: 0.9em;
+  line-height: 30px;
+  color: ${props => props.theme.colors.gray};
+  letter-spacing: 0.5px;
+  &:hover {
+    color: ${props => props.theme.colors.highlight};
   }
 `;
 
@@ -83,10 +86,9 @@ const Bio = () => {
         return (
           <BioWrapper>
             <BioHeader>
-              <Image
+              <AvatarImage
                 fixed={data.avatar.childImageSharp.fixed}
                 alt={author}
-                className="avatar"
               />
               <BioName>
                 <a href={`https://twitter.com/${social.twitter}`}>{author}</a>
@@ -94,25 +96,28 @@ const Bio = () => {
             </BioHeader>
             <BioMain>
               <BioText>
-                Independent UI/UX designer / front-end developer / writer who
-                loves crafting web apps.
+                デザイナー/フロントエンドエンジニア。自分のペースでWebサービスやWebサイトを作っています。詳しくはRESUME
+                <span role="img" aria-label="下">
+                  👇
+                </span>
+                を見てね。
               </BioText>
               <BioLinks>
-                <a className="bio-link" href="https://www.resume.id/catnose99">
+                <BioLink href="https://www.resume.id/catnose99">
                   <img src={svgResume} alt="RESUME" />
                   <div>RESUME</div>
-                </a>
-                <a
-                  className="bio-link bio-link--email"
+                </BioLink>
+                <BioLink
+                  className="bio-link--email"
                   href="mailto:catnose99@gmail.com"
                 >
                   <img src={svgEmail} alt="" />
                   <div>E-mail</div>
-                </a>
-                <a className="bio-link" href="https://twitter.com/catnose99">
+                </BioLink>
+                <BioLink href="https://twitter.com/catnose99">
                   <img src={svgTwitter} alt="Twitter" />
                   <div>Twitter</div>
-                </a>
+                </BioLink>
               </BioLinks>
             </BioMain>
           </BioWrapper>
