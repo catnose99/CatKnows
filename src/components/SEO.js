@@ -10,12 +10,13 @@ const SEO = ({ description, lang, meta, title }) => {
       render={data => {
         const metaDescription =
           description || data.site.siteMetadata.description;
+        const defaultTitle = "CatKnows | CatNoseの個人ブログ";
         return (
           <Helmet
             htmlAttributes={{
               lang
             }}
-            defaultTitle="CatKnows | CatNoseの個人ブログ"
+            defaultTitle={defaultTitle}
             title={title}
             titleTemplate={`%s | ${data.site.siteMetadata.title}`}
             meta={[
@@ -25,7 +26,7 @@ const SEO = ({ description, lang, meta, title }) => {
               },
               {
                 property: `og:title`,
-                content: title
+                content: title || defaultTitle
               },
               {
                 property: `og:description`,
