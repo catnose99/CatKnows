@@ -124,11 +124,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `CatKnows | CatNoseの個人ブログ`,
+        short_name: `CatKnows`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `rgb(33, 36, 45)`,
+        theme_color: `#0c9ee4`,
         display: `minimal-ui`,
         icon: `content/assets/avatar.png`
       }
