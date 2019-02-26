@@ -9,22 +9,22 @@ module.exports = {
     },
     categories: [
       {
-        name: "デザイン",
+        name: "Design",
         slug: "design",
         color: "#0c9ee4"
       },
       {
-        name: "開発メモ",
+        name: "Dev",
         slug: "dev",
         color: "#f7615f"
       },
       {
-        name: "アイデア",
+        name: "Self",
         slug: "self",
         color: "#ffa22b"
       },
       {
-        name: "コレクション",
+        name: "Collect",
         slug: "collect",
         color: "#ffa22b"
       }
