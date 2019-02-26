@@ -2,7 +2,7 @@
 title: "Netlifyデプロイ時にCan't resolveエラーが出たら"
 date: "2019-02-20T22:12:03.284Z"
 category: "dev"
-emoji: "😭"
+emoji: "🙀"
 ---
 
 Gatsby.jsでつくったブログをいざNetlifyでデプロイしようとしたところ、以下のようなエラーが出た。
