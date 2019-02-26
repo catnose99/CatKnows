@@ -45,7 +45,9 @@ const GitHubLink = styled.a`
 `;
 
 const ShareButtons = ({ slug, title, emoji }) => {
-  const encodedTitle = encodeURIComponent(`${emoji}${title} | CatKnows`);
+  const encodedTitle = encodeURIComponent(
+    `${emoji || "🐱"}${title} | CatKnows`
+  );
   const pageUrl = `https://catnose99.com${slug}`;
   return (
     <Wrapper>
