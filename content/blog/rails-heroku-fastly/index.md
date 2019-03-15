@@ -6,7 +6,9 @@ description: "Heroku + Rails + Fastlyでアセットだけでなくページデ�
 emoji: "🎢"
 ---
 
-僕がつくったポートフォリオ作成サービスRESUMEでは、ページをまるごとFastlyにキャッシュさせています。CSSや画像などをキャッシュさせるのは簡単ですが、ページ自体をキャッシュさせるとなると途端に難易度が上がります。ページキャッシュに関して、あまりインターネット上には知見がなかったため、ここにまとめておこうと思います。
+僕がつくったポートフォリオ作成サービス[RESUME](https://www.resume.id/)では、ページデータをFastlyにキャッシュさせています。CSSや画像などをキャッシュさせるのは簡単ですが、ページ自体をキャッシュしようとすると途端に難易度が上がります。
+
+ページキャッシュに関してはインターネット上にあまり知見が見つからなかったため、ここにまとめておこうと思います。
 
 ## RESUMEの技術スタック
 
@@ -15,7 +17,7 @@ emoji: "🎢"
 - Ruby on rails
 - Vue.js
 - Heroku
-- Fastly
+- **Fastly**
 - S3
 - CloudFront
 
@@ -25,7 +27,7 @@ Fastlyにはページデータとサービスのアセット（CSSやサービ�
 
 もともとはHerokuにデプロイしてページデータをキャッシュさせるつもりはありませんでした。しかし、いざHerokuにデプロイしてみると、どうしてもレスポンスの遅さが気になってしまいました（Herokuでは現在エンタープライズプランでしか国内リージョンを提供していません）。
 
-そこで、爆速だと話題になった[Dev.to](https://dev.to/)を参考にFastlyを使ってキャッシュすることにしました。
+そこで、爆速だと話題になった[Dev.to](https://dev.to/)を参考に、Fastlyでページデータごとキャッシュすることにしました。
 
 ## Dev.toの構成
 
@@ -46,11 +48,11 @@ Dev.toもRails + Heroku + Fastlyで構成されています。ほとんどのペ
 キャッシュするページに限らず、すべてのリクエストをFastlyを通して行います。
 ![FastlyとHerokuの通信](2019-03-04-10-59-13.png)
 
-ポイントはクライアントとFastlyのやり取りにHerokuのSSLは使えないということです。ページをキャッシュするためにはFastlyで用意されたTLSを使う必要があります。ここで独自ドメインを使うためにはFastlyのTLSプランに入らなければなりません。
+ポイントは**クライアントとFastlyのやり取りにHerokuのSSLは使えない**ということです。ページをキャッシュするためにはFastlyで用意されたTLSを使う必要があります。ここで独自ドメインを使うためにはFastlyのTLSプランに入らなければなりません。
 
 
 #### 独自ドメインを使うためにはTLSプランが必須
-独自ドメインを使ってページごとキャッシュするにはHeroku FastlyアドオンのTLSプランに入らなければなりません。つまり**55ドル/月**（2019年3月時点）がFastlyアドオン代としてかかってきます。これは避けようがありません。
+独自ドメインを使ってページごとキャッシュするにはHeroku FastlyアドオンのTLSプランに入らなければなりません。いちばん安いTLSプランでも**55ドル/月**（2019年3月時点）がかかります。これは避けようがありません。
 [[simple]]
 | 👉 [**Fastlyアドオンのプランと料金**](https://elements.heroku.com/addons/fastly#pricing)
 
@@ -58,17 +60,17 @@ Dev.toもRails + Heroku + Fastlyで構成されています。ほとんどのペ
 ### 2. Fastlyの管理画面で独自ドメインを追加
 アドオンを追加したらFastlyの管理画面を開きます。
 [[simple]]
-|✏ Herokuアプリ管理画面の「Resources」タブの「Fastly」をクリックするとFastlyの管理画面が開きます
+|🚀Herokuアプリ管理画面の「Resources」タブの「Fastly」をクリックするとFastlyの管理画面が開きます
 
 #### Domains設定
 CONFIGUREタブから「Domains」⇒「CREATE DOMAIN」を選びます。
 ![Domains設定](2019-03-03-14-44-56.png)
-「Domains」に使用したい独自ドメインを追加します。コメントには自分が分かりやすいような文言を書いておきます。
+👆「Domains」に使用したい独自ドメインを追加します。コメントには自分が分かりやすいような文言を書いておきます。
 
 #### Origins設定
 次に「Origins」⇒「CREATE A HOST」を選びます。
 ![Origins設定](2019-03-03-14-52-56.png)
-👆このように設定します。これ以外の部分は基本的にデフォルトのままでOKです。
+👆このように設定します。**Name**には後から見て自分が分かりやすい名前をセットします。**Address**にはHerokuのアプリドメインを入力します。その他、このスクショと基本的に同じように設定すれば良いかと思います。
 
 
 これでFastly管理画面での設定は一旦完了。「**Activate**」をクリックするとその設定が反映されるようになります。
@@ -103,7 +105,7 @@ heroku fastly:verify start www.example.com --app my-heroku-app
 ```
 すると「wwwドメイン」か「apexドメイン（wwwなしのドメイン）」か聞かれます。
 [[simple]]
-|Fastlyはwwwドメインを推奨しており、apexドメインにするには別の手続きが必要になります。詳しくは[Using Fastly with apex domains](https://docs.fastly.com/guides/basic-configuration/using-fastly-with-apex-domains)をチェックしてみてください。
+|Fastlyはwwwドメインを推奨しており、apexドメインにするには別の手続きが必要になります。詳しくは「[Using Fastly with apex domains](https://docs.fastly.com/guides/basic-configuration/using-fastly-with-apex-domains)」をチェックしてみてください。
 
 認証が完了するまでしばらく時間がかかります（僕の場合30分くらいかかった記憶があります）。
 
@@ -113,34 +115,38 @@ heroku fastly:verify start www.example.com --app my-heroku-app
 heroku fastly:verify status www.example.com --app my-heroku-app
 ```
 完了している場合にはCNAMEの値が返ってくるので、こちらもPointDNSに追加します。
+[[simple]]
+|後日談ですが、ページデータがHTTP2で配信されていなかったのでFastlyに問い合わせたところ「CNAMEの値を`http2.a.heroku.ssl.fastly.net`に変えたらHTTP2で配信されるよ」と返信が来ました。これが他のサイトにも当てはまるのか分かりませんが参考までに。
 
 #### Done
 ドメインの設定は以上で完了です。
 
 --------
 
-### 4. キャッシュするページにset-cookieを含めないようにする
+### 4. Railsでキャッシュするページの設定を行う
 #### Fastlyでキャッシュされる条件
-Fastlyでは以下の条件にマッチしたページのみキャッシュされます（[参考](https://support.fastly.com/hc/en-us/community/posts/360040167351-Fastly%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AETTL%E3%81%AE%E9%81%B8%E6%8A%9E%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF)）。
+Fastlyでは以下の条件にマッチしたページのみキャッシュされます（[参考：FastlyサーバーのTTLの選択ロジック
+](https://support.fastly.com/hc/en-us/community/posts/360040167351-Fastly%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AETTL%E3%81%AE%E9%81%B8%E6%8A%9E%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF)）。
 [[simple | キャッシュされる条件]]
 | 1. HTTPリクエストメソッドがGET（PUT/POST/DELETEなどのリクエストはキャッシュされない）
 | 2. レスポンスにSet-Cookieが含まれていない場合
-| 3. レスポンスにCache-Control: privateが含まれていない場合（`Cache-Control: no-store, no-cache`だとキャッシュされる）
+| 3. レスポンスにCache-Control: privateが含まれていない場合（Cache-Control: no-store, no-cacheだとキャッシュされる）
 
-Railsのデフォルトの挙動ではHTTPレスポンスに`Set-Cookie`が含まれます。つまり`Set-Cookie`を外してやればGETリクエストのレスポンスがキャッシュされるようになるというイメージです。
+Railsのデフォルトの挙動では
+- (2) HTTPレスポンスに `Set-Cookie` が含まれます。
+- (3) Cache-controlは`max-age=0, private, must-revalidate`です。privateが含まれるため、このままではFastlyにページはキャッシュされません（アセットはキャッシュされます）。
 
-3の`Cache-Control`については、Railsではデフォルトでキャッシュされる値になっています。絶対にキャッシュされてはいけないページには`Cache-Control: private`を返すようにしておくと良いでしょう。
+そのため、キャッシュさせたいページでは`Set-Cookie`を外し、`Cache-control`からprivateを除く必要があります。
 
-#### いかにしてSet-Cookieを外すか
-繰り返しになりますが、`Set-Cookie`を外してやればGETリクエストのレスポンスがキャッシュされるようになります。
-Fastly公式のGemを使うとが楽にできるようになります。
+#### いかにしてSet-Cookieを外し、Cache-controlの値を変えるか
+Fastly公式のGemを使うとこの設定が楽にできるようになります。
 [[simple]]
 |👉 [**fastly-rails:GitHub**](https://github.com/fastly/fastly-rails)
 
 例えば、本一覧ページ（books#index）をキャッシュさせたい場合、以下のように指定します。
 ```ruby{2}:title=books_controller.rb
 class BooksController < ApplicationController
-  before_action :set_cache_control_headers, only: [:index]
+  before_action :set_cache_control_headers, only: %i(index)
 
   def index
     ...
@@ -148,130 +154,47 @@ class BooksController < ApplicationController
 
 end
 ```
-これで`books#index`のレスポンスにSet-Cookieが含まれないようになります（ブラウザのDevツールからResponse Headersをチェックしてみてください）。
-ただこのGemが2017年からメンテされていないようなので使用するには注意が必要です。可能なら自分でメソッドを作った方が良いかもしれません。
+これで`books#index`のレスポンスにSet-Cookieが含まれなくなり、Cache-controlもキャッシュされる値に変更されます（ブラウザのデベロッパーツールからResponse Headersをチェックしてみてください）。
+アクション内でキャッシュするかどうか判断したい場合には以下のように書くこともできます（下書き状態の投稿はキャッシュしない、本人だったらキャッシュしない、など）。
 
-#### キャッシュさせないために
+```ruby{2}:title=books_controller.rb
+class BooksController < ApplicationController
+
+  def create
+    set_cache_control_headers if キャッシュさせたい条件
+  end
+
+end
+```
+言うまでもありませんが、キャッシュしてはいけないデータまでキャッシュしてしまわないように十分に気をつけましょう（ここだけでもテストを書きましょう）。
+[[simple]]
+|ちなみにこのGem、2017年からメンテされていないようです。自分で専用のメソッドを作った方が安心かもしれません。
 
 
-### 3. HTTP2配信設定を行う
+### 5. キャッシュされているかどうかを確認
+[[imageMedium]]
+|![](2019-03-11-23-52-11.png)
+何度かページにアクセスした際のレスポンスヘッダーに`x-cache: HIT`と表示されていれば、キャッシュデータが返ってきています。
+（`x-cache: MISS, HIT`という表示でもページは正常にキャッシュされています。）
 
+### 6. リダイレクト問題への対策
+リダイレクト処理が発生する可能性のあるページをキャッシュする場合、注意が必要です。
+例えば、投稿の新規作成ページ（`/posts/new`）をログインユーザー限定にする場合、Railsでは以下のような処理を行うことはよくあるかと思います。
+```ruby
+def new
+  # deviseのメソッドを利用
+  redirect_to new_user_session_path unless user_signed_in?
+end
+```
+例えば、このページが
+- キャッシュ対象となっており
+- まだキャッシュされていない状態で
+- 未ログインユーザーがアクセスした
 
+という場合どうなるでしょう。
+クライアントからFastlyへのアクセスは`/posts/new`だったにも関わらず、Herokuからはログインページが返ってきたわけです。つまり`/posts/new`に対して、ログインページのデータがキャッシュされてしまう可能性があるのです。
 
-## キャッシュしたいページを指定する
+そのため「リダイレクト処理がある場合キャッシュしないようにする（`Set-cookie`もしくは`Cache-Control: private`を含める）」「フロント側でログイン状態を判定しリダイレクトをかける」などの対策が必要になります。
 
-### set-cookieを除去するメソッドを定義しておく
-
-このメソッドが呼び出されるアクションはキャッシュされなくなります。
-
-ブラウザで確認することができます。HIT
-
-## パージ（キャッシュデータの削除）をどうするか
-
-### パージ用のメソッドを定義しておく
-
-### モデルに削除を紐付ける
-
-    
-
-## ユーザーごとに表示を変えるページをどうキャッシュするか
-
-ログインユーザーのデータをどうするか。一度コンテンツを表示します。
-
-localStorageに必要なデータだけを入れておく。これにより体感のラグを抑えることができます。
-
-### ページ自体をキャッシュするうえで気をつけなければならないこと
-
-- 
-
-## Fastly + RailsでCSRF Tokenをどう取得するか
-
-2つの方法が紹介されています。1つは、ESIを使った方法、もう1つは
-
----
-
-【Railsでページキャッシュ】キャッシュできないコンテンツをどう扱うか
-
-以下のような点がキャッシュできません。
-
-- CSRF Token
-- ログインユーザーのデータ
-
-戦略1 ESIを活用する
-
-しかし、この場合、キャッシュの旨味が半減してしまいます。
-
-戦略2 Tokenを後から取得する
-
-Dev.toもこの方法を取っています。つまり、ページデータを保存してから、
-
-[https://qiita.com/usk/items/60d8cce02a5b0cde1972](https://qiita.com/usk/items/60d8cce02a5b0cde1972)
-
-この記事の方法に従えば問題なく設定できる
-
-1. 以下のコマンド
-
-    heroku fastly:tls www.resume.id --app resume-prod
-
-2. 1で返ってきた値をPoint DNSにTXTレコードを追加
-
-3.
-
-    heroku fastly:verify start www.resume.id --app resume-prod
-
-www.resume.idを選ぶ
-（ルートドメインは色々厳しいぽい）
-
-4. 以下のコマンドで状況を確認
-
-    heroku fastly:verify status www.resume.id -a resume-prod
-
-以下が返ってくるのでCNAMEに追加
-CNAME  www.resume.id
- ▸    a.heroku.ssl.fastly.net
-
-以下バックアップメモ（無視して）
-
-    $ORIGIN resume.id.
-    $TTL 3600
-    resume.id.  IN SOA resume.id. app116805096.heroku.com. (
-                2018122400 ; zone serial in YYYYMMDDHH format
-                7200 ; refresh (s)
-                900 ; retry (s)
-                1209600 ; expiration (s)
-                60 ; minimum TTL (s)
-                )
-    
-    
-    ; PointDNS_SPECIFIC - ALIAS - resume.id. - cubic-butterfly-q3i0ndlh033rw74rd5743p4b.herokudns.com.
-    
-    www.resume.id.  IN CNAME  cubed-wisteria-6iq1hsqfd3z55vaiis38jqbh.herokudns.com.
-    
-    @  IN NS  dns8.pointhq.com.
-    
-    @  IN NS  dns12.pointhq.com.
-    
-    @  IN NS  dns15.pointhq.com.
-    
-    www.resume.id.  IN TXT  "_globalsign-domain-verification=7Hdy4jcS2SEm3nyalOkMPOwCvzavDPlw8xC4PM-OtE"
-
-    $ORIGIN resume.id.
-    $TTL 3600
-    resume.id.  IN SOA resume.id. app116805096.heroku.com. (
-                2018122400 ; zone serial in YYYYMMDDHH format
-                7200 ; refresh (s)
-                900 ; retry (s)
-                1209600 ; expiration (s)
-                60 ; minimum TTL (s)
-                )
-    
-    
-    ; PointDNS_SPECIFIC - ALIAS - resume.id. - cubic-butterfly-q3i0ndlh033rw74rd5743p4b.herokudns.com.
-    
-    @  IN NS  dns8.pointhq.com.
-    
-    @  IN NS  dns12.pointhq.com.
-    
-    @  IN NS  dns15.pointhq.com.
-    
-    www.resume.id.  IN TXT  "_globalsign-domain-verification=7Hdy4jcS2SEm3nyalOkMPOwCvzavDPlw8xC4PM-OtE"
+-----
+次の記事ではFastly + Railsでページのキャッシュをパージする方法をまとめたいと思います。
