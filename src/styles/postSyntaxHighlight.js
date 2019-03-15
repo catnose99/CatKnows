@@ -161,7 +161,8 @@ const SyntaxHighlightStyle = css`
     margin-top: 0;
   }
   /* Inline code */
-  p > code {
+  p > code,
+  li > code {
     display: inline-block;
     background: #edf2f7;
     padding: 0.1em 0.3em;
