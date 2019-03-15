@@ -70,12 +70,13 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`
             }
           },
-          {
-            resolve: `gatsby-remark-twemoji-shortcut`,
-            options: {
-              classname: "twemoji"
-            }
-          },
+          // 文字化けするため使わない
+          // {
+          //   resolve: `gatsby-remark-twemoji-shortcut`,
+          //   options: {
+          //     classname: "twemoji"
+          //   }
+          // },
           {
             resolve: "gatsby-remark-custom-blocks",
             options: {
