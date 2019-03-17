@@ -38,6 +38,7 @@ const globalStyle = createGlobalStyle`
     font-family: "Open Sans", Arial, -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
   }
   article, aside, details, figcaption, figure,
   footer, header, hgroup, menu, nav, section {
