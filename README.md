@@ -78,4 +78,5 @@ if(process.env.NODE_ENV === "production") {
 
 ### Licence
 MIT (except for images/icons/blog contents)
+
 You are not allowed to use or distribute images/icons/blogContents included in this project.

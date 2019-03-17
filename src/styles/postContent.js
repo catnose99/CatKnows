@@ -16,7 +16,7 @@ const postContentStyle = css`
   h4,
   h5,
   h6 {
-    margin: 35px 0 10px;
+    margin: 40px 0 10px;
     font-weight: 600;
     line-height: 1.5;
   }
@@ -38,7 +38,7 @@ const postContentStyle = css`
     }
   }
   h3 {
-    margin: 45px 0 12px;
+    margin: 55px 0 12px;
     font-size: 1.3em;
   }
   h4 {
@@ -164,7 +164,8 @@ const postContentStyle = css`
   }
   .gatsby-resp-image-wrapper {
     margin: 1em 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,.25);
+    border: solid 1px #e5e8ea;
+    box-shadow: 0 2px 5px -1px rgba(0,0,0,.25);
     border-radius: 4px;
     overflow: hidden;
   }
