@@ -31,6 +31,7 @@ const SyntaxHighlightStyle = css`
   pre[class*="language-"] {
     padding: 26px ${boxPaddingSide};
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   pre[class*="language-"] {
