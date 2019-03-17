@@ -22,10 +22,7 @@ const Content = styled.section`
   position: relative;
   background: #fff;
   overflow: hidden;
-  font-size: 17px;
-  @media screen and (max-width: ${props => props.theme.responsive.medium}) {
-    font-size: 15.5px;
-  }
+  font-size: 16px;
   &:before,
   &:after {
     content: "";
