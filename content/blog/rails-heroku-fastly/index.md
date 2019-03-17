@@ -1,5 +1,5 @@
 ---
-title: "Heroku + Rails + Fastlyでページをキャッシュする方法"
+title: "Fastly + Rails + Herokuでページをキャッシュする方法"
 date: "2019-03-04T22:12:03.284Z"
 category: "dev"
 description: "Heroku + Rails + Fastlyでアセットだけでなくページデータ自体をキャッシュする方法をまとめました。"
