@@ -162,6 +162,15 @@ const postContentStyle = css`
       }
     }
   }
+  blockquote {
+    margin: 2.3em 0;
+    font-style: italic;
+    background: ${props => props.theme.colors.whitesmoke};
+    padding: 1em;
+    p {
+      margin: .3em 0;
+    }
+  }
   .gatsby-resp-image-wrapper {
     margin: 1em 0;
     border: solid 1px #e5e8ea;
