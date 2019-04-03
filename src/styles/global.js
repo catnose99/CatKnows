@@ -35,7 +35,7 @@ const globalStyle = createGlobalStyle`
     line-height: 1.6;
     font-size: 100%;
     font-weight: 400;
-    font-family: "Open Sans", Arial, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic ProN","Hiragino Kaku Gothic Pro","メイリオ", Meiryo, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;

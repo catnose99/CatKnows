@@ -37,8 +37,7 @@
     "react-dom": "^16.8.0",
     "react-helmet": "^5.2.0",
     "styled-components": "^4.1.3",
-    "twemoji": "^11.3.0",
-    "typeface-open-sans": "^0.0.54"
+    "twemoji": "^11.3.0"
   },
   "homepage": "https://github.com/catnose99/CatKnows",
   "keywords": [

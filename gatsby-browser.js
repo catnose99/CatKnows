@@ -1,1 +1,0 @@
-import "typeface-open-sans";
