@@ -21,6 +21,10 @@ const postCustomBlockStyle = css`
     & > *:last-child {
       margin-bottom: 0;
     }
+    h5 {
+      font-size: 1.05em;
+      margin: 20px 0 5px;
+    }
   }
   & > *:first-child {
     margin-top: 0;
