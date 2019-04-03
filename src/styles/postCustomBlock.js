@@ -6,7 +6,7 @@ const postCustomBlockStyle = css`
     background: ${props => props.theme.colors.whitesmoke};
   }
   .custom-block-heading {
-    font-weight: 600;
+    font-weight: 700;
     .emoji {
       width: 1.2em !important;
       height: 1.2em !important;
@@ -20,6 +20,10 @@ const postCustomBlockStyle = css`
     }
     & > *:last-child {
       margin-bottom: 0;
+    }
+    h5 {
+      font-size: 1.05em;
+      margin: 20px 0 5px;
     }
   }
   & > *:first-child {

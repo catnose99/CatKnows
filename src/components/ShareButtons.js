@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 `;
 
 const ShareTitle = styled.div`
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.2em;
   letter-spacing: 0.05em;
 `;
@@ -31,7 +31,7 @@ const ShareLink = styled.a`
   border-radius: 50%;
   color: #fff;
   background: ${props => props.theme.colors.blackLight};
-  font-weight: 600;
+  font-weight: 700;
   vertical-align: middle;
   &:hover {
     transform: translateY(-2px);
