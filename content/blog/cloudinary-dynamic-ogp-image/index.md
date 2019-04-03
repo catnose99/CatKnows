@@ -24,18 +24,18 @@ Railsアプリケーションの場合、**ImageMagic**が選択肢に挙がる�
 [html2canvas](https://html2canvas.hertzen.com/)という超便利なJavaScriptライブラリを使えば、指定したHTMLのキャプチャを撮ることができる。つまりHTMLとCSSでOGP画像のベースを作っておき、html2canvasに「この部分をキャプチャしてね」と指定するわけだ。あとはいつものように画像をサーバーにPOSTする。
 
 ### 選択肢3：Cloudinaryを使う
-[Cloudinary](http://cloudinary.com)は画像のクラウド管理するサービスだ。アップロードした画像をキャッシュしてCDN配信してくれるだけでなく、リサイズやトリミングなどの変換もURLで指定するだけで実現できる。
-このCloudinaryを使うと**画像に文字を埋め込むのも超簡単**だ。上述の2つとは比べ物にならないほどに簡単。
+[Cloudinary](http://cloudinary.com)は画像のクラウド管理サービスだ。アップロードした画像をキャッシュしてCDN配信してくれるだけでなく、リサイズやトリミングなどの画像変換もURLで指定するだけで実現できる。
+Cloudinaryを使えば**画像に文字を埋め込むのも超簡単**だ。上述の2つの方法とは比べ物にならないほどに簡単。
 というわけで、この記事ではその方法を紹介する。
 [[simple]]
-| Cloudinaryは無料枠が大きいので最高<br>
+| Cloudinaryは無料枠が大きいので小規模なサービスやメディアなら無料枠で十分足りる<br>
 | 👉 [**Cloudinaryの料金**](https://cloudinary.com/pricing)
 
 
 ## Cloudinaryで動的にOGP画像を生成する方法
 
 [[simple]]
-| Cloudinaryに登録していない方は[登録](https://cloudinary.com/pricing)しておく。無料枠を使うのにクレジットカードの登録は不要（2019年4月時点）。
+| Cloudinaryに登録していない方は[登録](https://cloudinary.com/pricing)しておく。クレジットカードを登録しなくても無料枠を使える（2019年4月時点）。
 
 
 たったの2ステップでOGP画像を動的に生成できる。
@@ -43,17 +43,16 @@ Railsアプリケーションの場合、**ImageMagic**が選択肢に挙がる�
 2. **OGP画像用のURLを打ち込む**
 
 ### 1. 背景画像をアップロード
-画像はAPI経由だけでなく、ブラウザの管理画面（[Media Library](https://cloudinary.com/console/media_library)）からもアップロードできる。
+画像はAPI経由だけでなく、Cloudinaryの管理画面（[Media Library](https://cloudinary.com/console/media_library)）からもアップロードできる。
 ![Cloudinary Media Library](2019-04-03-12-06-12.png)
-アップロードは、フォルダーから画像をドラッグ＆ドロップするだけ。
+アップロードは、フォルダーからブラウザに画像をドラッグ＆ドロップするだけ。
 
-今回は例としてシンプルな背景画像（800x420）を使う。
 ![](2019-04-03-12-14-37.png)
 
-この画像は[こちら](https://www.dropbox.com/s/7xhksqctnrsl46v/ogp.png?dl=0)からダウンロードできる（自由に使ってもらってOK）。
+👆今回は例としてシンプルな背景画像（800x420）を使う。この画像は[こちら](https://www.dropbox.com/s/7xhksqctnrsl46v/ogp.png?dl=0)からダウンロードできる（自由に使ってもらってOK）。
 
 #### 画像サイズに注意
-Cloudinaryで画像にテキストを埋め込む際、サイズはpxでの指定になる（％指定はできない）。今回は画像の幅が800pxという前提で話を進める。
+Cloudinaryで画像にテキストを埋め込む際、サイズはpxでの指定になる（％指定はできない）。今回はアップロードした画像の幅が800pxという前提で話を進める。
 
 ### 2. OGP画像用のURLを打ち込む
 アップロードできたら画像のURLを取得しよう（サムネイル横のリンクマークをクリックするだけ）。次のようなURLのはずだ。
@@ -96,18 +95,18 @@ l_text:フォント種類_フォントサイズ_ウェイト:配置するテキ�
 | ##### co_rgb
 | `co_rgb:333`のように色コードでテキストカラーを指定
 | ##### w_幅
-| `w_500`のようにテキストの表示領域の幅を指定。デフォルトでは画像の中央にこの領域は配置される
+| `w_500`のようにテキストの表示領域の幅（px）を指定。デフォルトでは画像の中央にこの領域は配置される
 | ##### c_fit
 | これを指定すると文字が右端まで達すると改行される。指定しなかった場合は、テキストが幅に合わせて自動で縮小される
 
 
-例えば、以下のようになる。
+まとめると次のようになる。これを画像のURLの中に追加する。
 ```html:title=こんな指定にする
 _text:Sawarabi%20Gothic_45:テキスト,co_rgb:FFF,w_500,c_fit
 ```
 
 ## 完全なURL
-以上の内容をまとめると、次のようなURLが出来上がる。
+最終的なURLは次のようになる。
 ```html
 https://res.cloudinary.com/hoge/image/upload/l_text:Sawarabi%20Gothic_50_bold:これはOGPテキストです！,co_rgb:333,w_500,c_fit/v12345678/filename.png
 ```
