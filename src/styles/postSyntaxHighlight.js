@@ -94,7 +94,7 @@ const SyntaxHighlightStyle = css`
   .token.important,
   .token.statement,
   .token.bold {
-    font-weight: 600;
+    font-weight: 700;
   }
   .token.punctuation {
     color: #bebec5;
@@ -149,7 +149,7 @@ const SyntaxHighlightStyle = css`
     line-height: 24px;
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
       Courier New, monospace;
-    font-weight: 600;
+    font-weight: 700;
     border-radius: 0 4px;
     display: table;
     z-index: 2;

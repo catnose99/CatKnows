@@ -17,7 +17,7 @@ const postContentStyle = css`
   h5,
   h6 {
     margin: 40px 0 10px;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.5;
   }
   h2 {
@@ -93,7 +93,7 @@ const postContentStyle = css`
         border-radius: 50%;
         background: #5c9ee7;
         color: #fff;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 14px;
         text-align: center;
         line-height: 25px;
@@ -104,7 +104,7 @@ const postContentStyle = css`
     }
   }
   strong {
-    font-weight: 600;
+    font-weight: 700;
   }
   em {
     font-style: italic;
@@ -132,7 +132,7 @@ const postContentStyle = css`
       color: #FFF;
       padding: 10px 12px;
       text-align: center;
-      font-weight: 600;
+      font-weight: 700;
       &[align="center"] {
         text-align: center;
       }

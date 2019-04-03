@@ -11,7 +11,7 @@ const Wrapper = styled.div`
     line-height: 1.2;
     font-size: 12px;
     border-radius: 2px;
-    font-weight: 600;
+    font-weight: 700;
     color: #fff;
     @media screen and (max-width: ${props => props.theme.responsive.large}) {
       font-size: 11px;
