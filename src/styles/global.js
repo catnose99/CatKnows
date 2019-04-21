@@ -36,8 +36,6 @@ const globalStyle = createGlobalStyle`
     font-size: 100%;
     font-weight: 400;
     font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic ProN","Hiragino Kaku Gothic Pro","メイリオ", Meiryo, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
   }
   article, aside, details, figcaption, figure,
