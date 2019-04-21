@@ -2,7 +2,7 @@
 title: "Fastly + Railsでキャッシュをパージする方法"
 date: "2019-04-21T22:12:03.284Z"
 category: "dev"
-description: "Fastly + Railsでページのキャッシュをパージ（キャッシュを削除）する方法をまとめました。"
+description: "Fastly + Railsでページのキャッシュをインスタント・パージ（削除削除）する方法をまとめました。"
 emoji: "🗑"
 ---
 
