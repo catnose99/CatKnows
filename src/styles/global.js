@@ -35,8 +35,9 @@ const globalStyle = createGlobalStyle`
     line-height: 1.6;
     font-size: 100%;
     font-weight: 400;
-    font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic ProN","Hiragino Kaku Gothic Pro","メイリオ", Meiryo, sans-serif;
-    -webkit-text-size-adjust: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    -webkit-text-size-adjust: none;
   }
   article, aside, details, figcaption, figure,
   footer, header, hgroup, menu, nav, section {

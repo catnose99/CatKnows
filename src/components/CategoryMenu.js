@@ -63,7 +63,7 @@ const CategoryItem = styled.li`
   .cat-item__name {
     margin-top: 5px;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.5px;
     color: ${props => props.theme.colors.gray};
     @media screen and (max-width: ${props => props.theme.responsive.small}) {

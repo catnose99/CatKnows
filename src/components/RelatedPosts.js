@@ -49,7 +49,7 @@ const PostCardContent = styled.div`
   padding-left: 15px;
   h5 {
     font-size: 1.1em;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.45;
   }
   time {
