@@ -6,7 +6,7 @@ const postCustomBlockStyle = css`
     background: ${props => props.theme.colors.whitesmoke};
   }
   .custom-block-heading {
-    font-weight: 700;
+    font-weight: 600;
     .emoji {
       width: 1.2em !important;
       height: 1.2em !important;
