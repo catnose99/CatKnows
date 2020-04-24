@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Helmet from "react-helmet";
+import { Helmet } from "react-helmet";
 import twemoji from "twemoji";
 import styled from "styled-components";
 
@@ -34,17 +34,17 @@ const Content = styled.section`
   &:before {
     top: 0;
     left: 0;
-    border-top: 20px solid ${props => props.theme.colors.background};
+    border-top: 20px solid ${(props) => props.theme.colors.background};
     border-right: 20px solid transparent;
   }
   &:after {
     bottom: 0;
     right: 0;
-    border-bottom: 20px solid ${props => props.theme.colors.background};
+    border-bottom: 20px solid ${(props) => props.theme.colors.background};
     border-left: 20px solid transparent;
   }
-  @media screen and (max-width: ${props => props.theme.responsive.small}) {
-    margin: 0 -${props => props.theme.sideSpace.small};
+  @media screen and (max-width: ${(props) => props.theme.responsive.small}) {
+    margin: 0 -${(props) => props.theme.sideSpace.small};
     &:before,
     &:after {
       content: none;
@@ -54,7 +54,7 @@ const Content = styled.section`
 
 const HeroImage = styled.p`
   position: relative;
-  background: ${props => props.theme.colors.blackLight};
+  background: ${(props) => props.theme.colors.blackLight};
   text-align: center;
   background-image: url("${svgPattern}");
   background-repeat: repeat;
@@ -67,22 +67,22 @@ const HeroImage = styled.p`
     width: 110px;
     height: 110px;
   }
-  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+  @media screen and (max-width: ${(props) => props.theme.responsive.small}) {
     min-height: 190px;
   }
 `;
 
 const ContentMain = styled.div`
-  padding: 1.8em ${props => props.theme.sideSpace.contentLarge};
-  @media screen and (max-width: ${props => props.theme.responsive.small}) {
-    padding: 30px ${props => props.theme.sideSpace.contentSmall};
+  padding: 1.8em ${(props) => props.theme.sideSpace.contentLarge};
+  @media screen and (max-width: ${(props) => props.theme.responsive.small}) {
+    padding: 30px ${(props) => props.theme.sideSpace.contentSmall};
   }
 `;
 
 const PostTitle = styled.h1`
   margin: 0.1em 0 0.3em;
   font-size: 1.8em;
-  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+  @media screen and (max-width: ${(props) => props.theme.responsive.small}) {
     font-size: 25px;
   }
   font-weight: 600;
@@ -91,7 +91,7 @@ const PostTitle = styled.h1`
 
 const PostDate = styled.time`
   display: block;
-  color: ${props => props.theme.colors.silver};
+  color: ${(props) => props.theme.colors.silver};
   font-size: 0.9em;
   letter-spacing: 0.05em;
 `;
@@ -129,8 +129,8 @@ class BlogPostTemplate extends React.Component {
             dangerouslySetInnerHTML={{
               __html: twemoji.parse(emoji || "😺", {
                 folder: "svg",
-                ext: ".svg"
-              })
+                ext: ".svg",
+              }),
             }}
           />
           <ContentMain>
