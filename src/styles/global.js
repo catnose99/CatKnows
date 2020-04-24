@@ -30,13 +30,12 @@ const globalStyle = createGlobalStyle`
     height: 100%;
   }
   body {
-    background: ${props => props.theme.colors.background};
-    color: ${props => props.theme.colors.background};
+    background: ${(props) => props.theme.colors.background};
+    color: #333;
     line-height: 1.6;
     font-size: 100%;
     font-weight: 400;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",  "Hiragino Sans", Meiryo, sans-serif;
     -webkit-text-size-adjust: none;
   }
   article, aside, details, figcaption, figure,
@@ -44,7 +43,7 @@ const globalStyle = createGlobalStyle`
     display: block;
   }
   a {
-    color: ${props => props.theme.colors.highlight};
+    color: ${(props) => props.theme.colors.highlight};
     text-decoration: none;
     transition: .2s;
     :focus{
