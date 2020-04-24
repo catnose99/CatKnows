@@ -5,45 +5,45 @@ module.exports = {
     description: `CatNoseの個人ブログ。デザインやプログラミングの知見、生産性向上テクニックなどをストックしていきます。`,
     siteUrl: `https://catnose99.com`,
     social: {
-      twitter: `catnose99`
+      twitter: `catnose99`,
     },
     categories: [
       {
         name: "Design",
         slug: "design",
-        color: "#0c9ee4"
+        color: "#0c9ee4",
       },
       {
         name: "Dev",
         slug: "dev",
-        color: "#f7615f"
+        color: "#f7615f",
       },
       {
         name: "Self",
         slug: "self",
-        color: "#ffa22b"
+        color: "#ffa22b",
       },
       {
         name: "Collect",
         slug: "collect",
-        color: "#ffa22b"
-      }
-    ]
+        color: "#ffa22b",
+      },
+    ],
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
-        name: `blog`
-      }
+        name: `blog`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets`,
-        name: `assets`
-      }
+        name: `assets`,
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -54,21 +54,21 @@ module.exports = {
             resolve: "gatsby-remark-embed-youtube",
             options: {
               width: 650,
-              height: 365
-            }
+              height: 365,
+            },
           },
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 700,
-              linkImagesToOriginal: false
-            }
+              linkImagesToOriginal: false,
+            },
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`
-            }
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
           },
           // 文字化けするため使わない
           // {
@@ -83,28 +83,28 @@ module.exports = {
               blocks: {
                 simple: {
                   classes: "simple",
-                  title: "optional"
+                  title: "optional",
                 },
                 info: {
                   classes: "info",
-                  title: "optional"
+                  title: "optional",
                 },
                 alert: {
                   classes: "alert",
-                  title: "optional"
+                  title: "optional",
                 },
                 notice: {
                   classes: "notice",
-                  title: "optional"
+                  title: "optional",
                 },
                 imageSmall: {
-                  classes: "image-small"
+                  classes: "image-small",
                 },
                 imageMedium: {
-                  classes: "image-medium"
-                }
-              }
-            }
+                  classes: "image-medium",
+                },
+              },
+            },
           },
           {
             resolve: `gatsby-remark-prismjs`,
@@ -112,13 +112,13 @@ module.exports = {
               classPrefix: "language-",
               inlineCodeMarker: null,
               aliases: {},
-              noInlineHighlight: false
-            }
+              noInlineHighlight: false,
+            },
           },
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`
-        ]
-      }
+          `gatsby-remark-smartypants`,
+        ],
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -131,24 +131,18 @@ module.exports = {
         background_color: `rgb(33, 36, 45)`,
         theme_color: `#0c9ee4`,
         display: `minimal-ui`,
-        icon: `content/assets/avatar.png`
-      }
+        icon: `content/assets/avatar.png`,
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-134661352-1"
-      }
+        trackingId: "UA-134661352-1",
+      },
     },
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        output: `/sitemap.xml`
-      }
-    },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-twitter`,
-    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`
-  ]
+    `gatsby-plugin-styled-components`,
+  ],
 };
