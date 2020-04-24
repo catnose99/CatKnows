@@ -1,12 +1,12 @@
 import React from "react";
-import Helmet from "react-helmet";
+import { Helmet } from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
 
 const PostJsonLD = ({ title, description, date, categorySlug, url }) => {
   return (
     <StaticQuery
       query={jsonLdPostQuery}
-      render={data => {
+      render={(data) => {
         const { siteUrl, author, categories } = data.site.siteMetadata;
         const dateFormatted = date.replace(/\./g, "-");
         const publisher = {
@@ -16,13 +16,13 @@ const PostJsonLD = ({ title, description, date, categorySlug, url }) => {
             "@type": "ImageObject",
             url: `${siteUrl}/images/avatar.png`,
             width: 150,
-            height: 150
-          }
+            height: 150,
+          },
         };
         const authorData = {
           "@type": "Person",
           name: author,
-          image: `${siteUrl}/images/avatar.png`
+          image: `${siteUrl}/images/avatar.png`,
         };
         const jsonLd = {
           "@context": "http://schema.org",
@@ -36,12 +36,12 @@ const PostJsonLD = ({ title, description, date, categorySlug, url }) => {
           dateModified: dateFormatted,
           description: description,
           author: authorData,
-          publisher
+          publisher,
         };
 
         //bread crumbs
         //get category name from slug
-        const categoryObject = categories.find(cat => {
+        const categoryObject = categories.find((cat) => {
           return cat.slug === categorySlug;
         });
         const categoryName = categoryObject
@@ -57,26 +57,26 @@ const PostJsonLD = ({ title, description, date, categorySlug, url }) => {
               position: 1,
               item: {
                 "@id": siteUrl,
-                name: "HOME"
-              }
+                name: "HOME",
+              },
             },
             {
               "@type": "ListItem",
               position: 2,
               item: {
                 "@id": `${siteUrl}/${categorySlug}`,
-                name: categoryName
-              }
+                name: categoryName,
+              },
             },
             {
               "@type": "ListItem",
               position: 3,
               item: {
                 "@id": url,
-                name: title
-              }
-            }
-          ]
+                name: title,
+              },
+            },
+          ],
         };
         return (
           <Helmet>

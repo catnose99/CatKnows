@@ -1,20 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Helmet from "react-helmet";
+import { Helmet } from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
 
 const SEO = ({ description, lang, meta, title }) => {
   return (
     <StaticQuery
       query={detailsQuery}
-      render={data => {
+      render={(data) => {
         const metaDescription =
           description || data.site.siteMetadata.description;
         const defaultTitle = "CatKnows | CatNoseの個人ブログ";
         return (
           <Helmet
             htmlAttributes={{
-              lang
+              lang,
             }}
             defaultTitle={defaultTitle}
             title={title}
@@ -22,44 +22,44 @@ const SEO = ({ description, lang, meta, title }) => {
             meta={[
               {
                 name: `description`,
-                content: metaDescription
+                content: metaDescription,
               },
               {
                 property: `og:title`,
-                content: title || defaultTitle
+                content: title || defaultTitle,
               },
               {
                 property: `og:description`,
-                content: metaDescription
+                content: metaDescription,
               },
               {
                 property: `og:image`,
-                content: `${data.site.siteMetadata.siteUrl}/images/ogp.png`
+                content: `${data.site.siteMetadata.siteUrl}/images/ogp.png`,
               },
               {
                 property: `og:type`,
-                content: `website`
+                content: `website`,
               },
               {
                 name: `twitter:card`,
-                content: `summary`
+                content: `summary`,
               },
               {
                 name: `twitter:creator`,
-                content: data.site.siteMetadata.author
+                content: data.site.siteMetadata.author,
               },
               {
                 name: `twitter:title`,
-                content: title
+                content: title,
               },
               {
                 name: `twitter:description`,
-                content: metaDescription
+                content: metaDescription,
               },
               {
                 name: `google-site-verification`,
-                content: `tPbbYBIkS-hMJ6JCXihoxuipkMX5q1QnyQ-6R_kvkYs`
-              }
+                content: `tPbbYBIkS-hMJ6JCXihoxuipkMX5q1QnyQ-6R_kvkYs`,
+              },
             ].concat(meta)}
           />
         );
@@ -70,14 +70,14 @@ const SEO = ({ description, lang, meta, title }) => {
 
 SEO.defaultProps = {
   lang: `ja`,
-  meta: []
+  meta: [],
 };
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.array,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };
 
 export default SEO;
