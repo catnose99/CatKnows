@@ -43,5 +43,4 @@ emoji: "🐣"
 
 というわけで、Zennにお金をかけてくれる会社をしばらく募集します。
 
-👇 連絡先
-catnose99@gmail.com
+連絡先：catnose99@gmail.com
