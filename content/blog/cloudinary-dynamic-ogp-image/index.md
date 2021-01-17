@@ -102,7 +102,7 @@ l_text:フォント種類_フォントサイズ_ウェイト:配置するテキ�
 
 まとめると次のようになる。これを画像のURLの中に追加する。
 ```html:title=こんな指定にする
-_text:Sawarabi%20Gothic_45:テキスト,co_rgb:FFF,w_500,c_fit
+l_text:Sawarabi%20Gothic_45:テキスト,co_rgb:FFF,w_500,c_fit
 ```
 
 ## 完全なURL
