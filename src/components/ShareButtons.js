@@ -55,7 +55,7 @@ const ShareButtons = ({ slug, title, emoji }) => {
       <ShareLinks>
         <ShareLink
           href={`https://twitter.com/share?url=${pageUrl}&text=${encodedTitle}&via=catnose99`}
-          rel="nofllow"
+          rel="nofollow"
         >
           <img
             src={svgTwitterWhite}
@@ -70,21 +70,21 @@ const ShareButtons = ({ slug, title, emoji }) => {
         <ShareLink
           href={`https://www.facebook.com/share.php?u=${pageUrl}`}
           style={{ fontSize: "20px" }}
-          rel="nofllow"
+          rel="nofollow"
         >
           f
         </ShareLink>
         <ShareLink
           href={`http://b.hatena.ne.jp/add?mode=confirm&url=${pageUrl}`}
           style={{ fontSize: "19px" }}
-          rel="nofllow"
+          rel="nofollow"
         >
           B!
         </ShareLink>
       </ShareLinks>
       <GitHubLink
         href={`https://github.com/catnose99/CatKnows/edit/master/content/blog${slug}index.md`}
-        rel="nofllow"
+        rel="nofollow"
       >
         Edit on GitHub
       </GitHubLink>
