@@ -11,6 +11,7 @@
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.0.118",
     "gatsby-image": "^2.0.29",
+    "gatsby-plugin-feed": "^3.0.0",
     "gatsby-plugin-google-analytics": "^2.0.14",
     "gatsby-plugin-manifest": "^2.0.17",
     "gatsby-plugin-react-helmet": "^3.0.6",
