@@ -4,11 +4,11 @@ import svgTwitterWhite from "../svg/socials/twitter-white.svg";
 
 const Wrapper = styled.div`
   margin: 0 0 2.5em;
-  padding: 0 ${props => props.theme.sideSpace.contentLarge};
+  padding: 0 ${(props) => props.theme.sideSpace.contentLarge};
   text-align: center;
-  color: ${props => props.theme.colors.blackLight};
-  @media screen and (max-width: ${props => props.theme.responsive.small}) {
-    padding: 0 ${props => props.theme.sideSpace.contentSmall};
+  color: ${(props) => props.theme.colors.blackLight};
+  @media screen and (max-width: ${(props) => props.theme.responsive.small}) {
+    padding: 0 ${(props) => props.theme.sideSpace.contentSmall};
   }
 `;
 
@@ -30,7 +30,7 @@ const ShareLink = styled.a`
   line-height: 40px;
   border-radius: 50%;
   color: #fff;
-  background: ${props => props.theme.colors.blackLight};
+  background: ${(props) => props.theme.colors.blackLight};
   font-weight: 600;
   vertical-align: middle;
   &:hover {
@@ -41,14 +41,14 @@ const GitHubLink = styled.a`
   display: inline-block;
   margin-top: 1em;
   font-size: 0.85em;
-  color: ${props => props.theme.colors.silver};
+  color: ${(props) => props.theme.colors.silver};
 `;
 
 const ShareButtons = ({ slug, title, emoji }) => {
   const encodedTitle = encodeURIComponent(
     `${emoji || "🐱"}${title} | CatKnows`
   );
-  const pageUrl = `https://catnose99.com${slug}`;
+  const pageUrl = `https://catnose99.com/blog/${slug}`;
   return (
     <Wrapper>
       <ShareTitle>SHARE</ShareTitle>
@@ -63,7 +63,7 @@ const ShareButtons = ({ slug, title, emoji }) => {
             style={{
               width: "24px",
               height: "19px",
-              marginTop: "11px"
+              marginTop: "11px",
             }}
           />
         </ShareLink>
