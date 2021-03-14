@@ -3,6 +3,10 @@
     {
       "source": "/timeline",
       "destination": "https://timeline-lac.vercel.app"
+    },
+    {
+      "source": "/timeline/:match*",
+      "destination": "https://timeline-lac.vercel.app/:match*"
     }
   ]
 }
