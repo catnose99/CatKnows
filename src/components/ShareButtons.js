@@ -48,7 +48,7 @@ const ShareButtons = ({ slug, title, emoji }) => {
   const encodedTitle = encodeURIComponent(
     `${emoji || "🐱"}${title} | CatKnows`
   );
-  const pageUrl = `https://catnose99.com/blog${slug}`;
+  const pageUrl = `https://catnose99.com${slug}`;
   return (
     <Wrapper>
       <ShareTitle>SHARE</ShareTitle>

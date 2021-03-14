@@ -3,7 +3,7 @@ module.exports = {
     title: `Cat Knows`,
     author: `CatNose`,
     description: `CatNoseの個人ブログ。デザインやプログラミングの知見、生産性向上テクニックなどをストックしていきます。`,
-    siteUrl: `https://catnose99.com/blog`,
+    siteUrl: `https://catnose99.com`,
     social: {
       twitter: `catnose99`,
     },
