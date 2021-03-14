@@ -1,12 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/timeline",
-      "destination": "https://timeline-eta.vercel.app"
-    },
-    {
       "source": "/timeline/:match*",
       "destination": "https://timeline-eta.vercel.app/:match*"
+    },
+    {
+      "source": "/timeline",
+      "destination": "https://timeline-eta.vercel.app"
     }
   ]
 }
