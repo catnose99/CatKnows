@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/timeline",
+      "destination": "https://timeline-lac.vercel.app"
+    }
+  ]
+}
