@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/timeline",
-      "destination": "https://timeline-lac.vercel.app"
+      "destination": "https://timeline-eta.vercel.app"
     },
     {
       "source": "/timeline/:match*",
-      "destination": "https://timeline-lac.vercel.app/:match*"
+      "destination": "https://timeline-eta.vercel.app/:match*"
     }
   ]
 }
