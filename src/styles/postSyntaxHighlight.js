@@ -5,8 +5,8 @@ const boxPaddingSide = "1.2em";
 const SyntaxHighlightStyle = css`
   .gatsby-highlight {
     margin: 1.5em 0;
-    @media screen and (max-width: ${props => props.theme.responsive.small}) {
-      margin: 1.5em -${props => props.theme.sideSpace.contentSmall};
+    @media screen and (max-width: ${(props) => props.theme.responsive.small}) {
+      margin: 1.5em -${(props) => props.theme.sideSpace.contentSmall};
     }
   }
   code[class*="language-"],
@@ -22,9 +22,9 @@ const SyntaxHighlightStyle = css`
   }
   pre[class*="language-"],
   :not(pre) > code[class*="language-"] {
-    background: ${props => props.theme.colors.blackLight};
+    background: ${(props) => props.theme.colors.blackLight};
     border-radius: 5px;
-    @media screen and (max-width: ${props => props.theme.responsive.small}) {
+    @media screen and (max-width: ${(props) => props.theme.responsive.small}) {
       border-radius: 0;
     }
   }
@@ -94,7 +94,7 @@ const SyntaxHighlightStyle = css`
   .token.important,
   .token.statement,
   .token.bold {
-    font-weight: 600;
+    font-weight: 700;
   }
   .token.punctuation {
     color: #bebec5;
@@ -149,13 +149,13 @@ const SyntaxHighlightStyle = css`
     line-height: 24px;
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
       Courier New, monospace;
-    font-weight: 600;
+    font-weight: 700;
     border-radius: 0 4px;
     display: table;
     z-index: 2;
-    @media screen and (max-width: ${props => props.theme.responsive.small}) {
+    @media screen and (max-width: ${(props) => props.theme.responsive.small}) {
       border-radius: 0;
-      margin-right: -${props => props.theme.sideSpace.contentSmall};
+      margin-right: -${(props) => props.theme.sideSpace.contentSmall};
     }
   }
   .gatsby-code-title + .gatsby-highlight {

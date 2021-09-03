@@ -35,8 +35,9 @@ const globalStyle = createGlobalStyle`
     line-height: 1.6;
     font-size: 100%;
     font-weight: 400;
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",  "Hiragino Sans", Meiryo, sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     -webkit-text-size-adjust: none;
+    letter-spacing: 0.05em;
   }
   article, aside, details, figcaption, figure,
   footer, header, hgroup, menu, nav, section {

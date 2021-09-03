@@ -44,7 +44,7 @@ const PostCardContent = styled.div`
   padding-left: 20px;
   h3 {
     font-size: 1.5em;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.4;
   }
   time {

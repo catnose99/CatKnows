@@ -1,5 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
+import { Helmet } from "react-helmet";
 import GlobalStyle from "../styles/global";
 import theme from "../styles/theme";
 import Header from "../components/Header";
@@ -35,6 +36,14 @@ class Layout extends React.Component {
 
     return (
       <ThemeProvider theme={theme}>
+        <Helmet>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
+            rel="stylesheet"
+          />
+        </Helmet>
         <div className="siteRoot">
           <Header title={title} location={location} />
           <ContentWrapper>

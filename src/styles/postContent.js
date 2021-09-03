@@ -3,13 +3,13 @@ import svgHeadingIcon from "../svg/others/heading-icon.svg";
 
 const postContentStyle = css`
   margin: 1.5em 0 1em;
-  line-height: 1.8;
+  line-height: 1.9;
 
   a:hover {
     text-decoration: underline;
   }
   p {
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
   }
   h2,
   h3,
@@ -17,7 +17,7 @@ const postContentStyle = css`
   h5,
   h6 {
     margin: 40px 0 10px;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.5;
   }
   h2 {
@@ -93,18 +93,18 @@ const postContentStyle = css`
         border-radius: 50%;
         background: #5c9ee7;
         color: #fff;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 14px;
         text-align: center;
         line-height: 25px;
         content: counter(number);
         counter-increment: number;
-        background: ${props => props.theme.colors.highlight};
+        background: ${(props) => props.theme.colors.highlight};
       }
     }
   }
   strong {
-    font-weight: 600;
+    font-weight: 700;
   }
   em {
     font-style: italic;
@@ -128,11 +128,11 @@ const postContentStyle = css`
     font-size: .9em;
     line-height: 1.4;
     th {
-      background-color: ${props => props.theme.colors.highlight};
+      background-color: ${(props) => props.theme.colors.highlight};
       color: #FFF;
       padding: 10px 12px;
       text-align: center;
-      font-weight: 600;
+      font-weight: 700;
       &[align="center"] {
         text-align: center;
       }
@@ -141,8 +141,8 @@ const postContentStyle = css`
       }
     }
     td {
-      background-color:  ${props => props.theme.colors.whitesmoke};
-      color: ${props => props.theme.colors.blackLight};
+      background-color:  ${(props) => props.theme.colors.whitesmoke};
+      color: ${(props) => props.theme.colors.blackLight};
       padding: 10px 12px;
     }
     thead tr {
@@ -165,7 +165,7 @@ const postContentStyle = css`
   blockquote {
     margin: 2.3em 0;
     font-style: italic;
-    background: ${props => props.theme.colors.whitesmoke};
+    background: ${(props) => props.theme.colors.whitesmoke};
     padding: 1em;
     p {
       margin: .3em 0;

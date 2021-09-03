@@ -10,7 +10,7 @@ import svg404 from "../svg/others/404.svg";
 const Wrapper = styled.div`
   color: #fff;
   text-align: center;
-  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+  @media screen and (max-width: ${(props) => props.theme.responsive.small}) {
     margin-top: 2em;
   }
 `;
@@ -23,7 +23,7 @@ const HeroImage = styled.img`
 
 const Title = styled.div`
   font-size: 55px;
-  font-weight: 600;
+  font-weight: 700;
   color: #fff;
 `;
 
@@ -33,11 +33,11 @@ const StyledLink = styled(Link)`
   padding: 0.3em 1em;
   background: #fff;
   font-size: 20px;
-  font-weight: 600;
-  color: ${props => props.theme.colors.blackLight};
+  font-weight: 700;
+  color: ${(props) => props.theme.colors.blackLight};
   border-radius: 4px;
   &:hover {
-    background: ${props => props.theme.colors.highlight};
+    background: ${(props) => props.theme.colors.highlight};
   }
 `;
 

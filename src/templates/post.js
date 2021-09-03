@@ -62,7 +62,7 @@ const PostTitle = styled.h1`
   @media screen and (max-width: ${(props) => props.theme.responsive.small}) {
     font-size: 25px;
   }
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.5;
 `;
 

@@ -39,7 +39,7 @@ const BioHeader = styled.div`
 const BioName = styled.div`
   margin-left: 10px;
   a {
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 1px;
     font-size: 1.3em;
     color: #fff;
@@ -69,7 +69,7 @@ const BioLinks = styled.div`
 const BioLink = styled.a`
   width: 33.3%;
   display: block;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.9em;
   line-height: 30px;
   color: ${(props) => props.theme.colors.gray};

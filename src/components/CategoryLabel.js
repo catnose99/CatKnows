@@ -11,9 +11,9 @@ const Wrapper = styled.div`
     line-height: 1.2;
     font-size: 12px;
     border-radius: 2px;
-    font-weight: 600;
+    font-weight: 700;
     color: #fff;
-    @media screen and (max-width: ${props => props.theme.responsive.large}) {
+    @media screen and (max-width: ${(props) => props.theme.responsive.large}) {
       font-size: 11px;
       padding: 2.5px 6px;
     }
@@ -25,9 +25,9 @@ const categoryLabel = ({ slug, isLink }) => {
   return (
     <StaticQuery
       query={categoryQuery}
-      render={data => {
+      render={(data) => {
         const { categories } = data.site.siteMetadata;
-        const categoryObject = categories.find(cat => {
+        const categoryObject = categories.find((cat) => {
           return cat.slug === slug;
         });
         const categoryName = categoryObject ? categoryObject.name : slug;
@@ -37,7 +37,7 @@ const categoryLabel = ({ slug, isLink }) => {
             to={`/category/${slug}`}
             className="category-text"
             style={{
-              background: categoryColor
+              background: categoryColor,
             }}
           >
             {categoryName}
@@ -46,7 +46,7 @@ const categoryLabel = ({ slug, isLink }) => {
           <span
             className="category-text"
             style={{
-              background: categoryColor
+              background: categoryColor,
             }}
           >
             {categoryName}
