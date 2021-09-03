@@ -10,18 +10,17 @@ import svgEmail from "../svg/socials/email.svg";
 const BioWrapper = styled.div`
   position: sticky;
   top: 2em;
-  width: ${props => props.theme.sizes.bioWidth};
+  width: ${(props) => props.theme.sizes.bioWidth};
   padding: 1.5em;
   font-size: 15.5px;
-  background: ${props => props.theme.colors.blackLight};
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  @media screen and (max-width: ${props => props.theme.responsive.large}) {
+  background: ${(props) => props.theme.colors.blackLight};
+  border-radius: 15px;
+  @media screen and (max-width: ${(props) => props.theme.responsive.large}) {
     position: relative;
     margin: 2em 0;
     width: 100%;
   }
-  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+  @media screen and (max-width: ${(props) => props.theme.responsive.small}) {
     padding: 1.3em 1em;
   }
 `;
@@ -73,10 +72,10 @@ const BioLink = styled.a`
   font-weight: 600;
   font-size: 0.9em;
   line-height: 30px;
-  color: ${props => props.theme.colors.gray};
+  color: ${(props) => props.theme.colors.gray};
   letter-spacing: 0.5px;
   &:hover {
-    color: ${props => props.theme.colors.highlight};
+    color: ${(props) => props.theme.colors.highlight};
   }
 `;
 
@@ -84,7 +83,7 @@ const Bio = () => {
   return (
     <StaticQuery
       query={bioQuery}
-      render={data => {
+      render={(data) => {
         const { author, social } = data.site.siteMetadata;
         return (
           <BioWrapper>

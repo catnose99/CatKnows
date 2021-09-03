@@ -8,7 +8,7 @@ import CategoryJsonLd from "../components/json/CategoryJsonLd";
 import styled from "styled-components";
 
 const Heading = styled.h1`
-  margin: 0.5em 0 0.8em;
+  margin: 2rem 0 0.5em;
   font-size: 32px;
   color: #fff;
   font-weight: 600;
@@ -23,7 +23,7 @@ class CategoryTemplate extends React.Component {
     const { location } = this.props;
     // get Category name from category slug
     const categorySlug = pageContext.category;
-    const categoryObject = data.site.siteMetadata.categories.find(cat => {
+    const categoryObject = data.site.siteMetadata.categories.find((cat) => {
       return cat.slug === categorySlug;
     });
     // use slug when name doesn't exist

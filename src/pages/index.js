@@ -1,12 +1,17 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { Helmet } from "react-helmet";
+import styled from "styled-components";
 
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import PostCard from "../components/PostCard";
 import CategoryMenu from "../components/CategoryMenu";
 import HomeJsonLd from "../components/json/HomeJsonLd";
+
+const PostsContainer = styled.div`
+  margin-top: 1.5rem;
+`;
 
 class BlogIndex extends React.Component {
   render() {
@@ -23,9 +28,11 @@ class BlogIndex extends React.Component {
         </Helmet>
         <HomeJsonLd />
         <CategoryMenu location={location} />
-        {posts.map(({ node }) => {
-          return <PostCard key={node.fields.slug} node={node} />;
-        })}
+        <PostsContainer>
+          {posts.map(({ node }) => {
+            return <PostCard key={node.fields.slug} node={node} />;
+          })}
+        </PostsContainer>
       </Layout>
     );
   }

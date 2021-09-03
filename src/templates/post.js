@@ -20,35 +20,11 @@ import svgPattern from "../svg/others/pattern.svg";
 
 const Content = styled.section`
   position: relative;
-  background: #fff;
   overflow: hidden;
   font-size: 16px;
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    z-index: 5;
-  }
-  &:before {
-    top: 0;
-    left: 0;
-    border-top: 20px solid ${(props) => props.theme.colors.background};
-    border-right: 20px solid transparent;
-  }
-  &:after {
-    bottom: 0;
-    right: 0;
-    border-bottom: 20px solid ${(props) => props.theme.colors.background};
-    border-left: 20px solid transparent;
-  }
+  border-radius: 15px;
   @media screen and (max-width: ${(props) => props.theme.responsive.small}) {
     margin: 0 -${(props) => props.theme.sideSpace.small};
-    &:before,
-    &:after {
-      content: none;
-    }
   }
 `;
 
@@ -74,6 +50,7 @@ const HeroImage = styled.p`
 
 const ContentMain = styled.div`
   padding: 1.8em ${(props) => props.theme.sideSpace.contentLarge};
+  background: #fff;
   @media screen and (max-width: ${(props) => props.theme.responsive.small}) {
     padding: 30px ${(props) => props.theme.sideSpace.contentSmall};
   }
@@ -139,9 +116,9 @@ class BlogPostTemplate extends React.Component {
             <CategoryLabel slug={category} isLink="true" />
             <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
             <FollowBudge />
+            <ShareButtons slug={slug} title={title} emoji={emoji} />
           </ContentMain>
           <aside>
-            <ShareButtons slug={slug} title={title} emoji={emoji} />
             <RelatedPosts posts={relatedPosts} />
           </aside>
         </Content>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import svgTwitterWhite from "../svg/socials/twitter-white.svg";
 
 const Wrapper = styled.div`
-  margin: 0 0 2.5em;
+  margin: 1.8rem 0 0;
   padding: 0 ${(props) => props.theme.sideSpace.contentLarge};
   text-align: center;
   color: ${(props) => props.theme.colors.blackLight};

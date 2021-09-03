@@ -9,22 +9,22 @@ import ContentWrapper from "../components/ContentWrapper";
 import styled from "styled-components";
 
 const Content = styled.div`
-  margin-top: 2em;
+  margin-top: 1rem;
   display: flex;
   min-height: 85vh;
   align-items: flex-start;
-  @media screen and (max-width: ${props => props.theme.responsive.large}) {
+  @media screen and (max-width: ${(props) => props.theme.responsive.large}) {
     display: block;
   }
-  @media screen and (max-width: ${props => props.theme.responsive.small}) {
-    margin-top: 0;
+  @media screen and (max-width: ${(props) => props.theme.responsive.small}) {
+    margin-top: 0.5rem;
   }
 `;
 
 const MainWrapper = styled.div`
-  width: calc(100% - ${props => props.theme.sizes.bioWidth} - 40px);
+  width: calc(100% - ${(props) => props.theme.sizes.bioWidth} - 40px);
   margin-right: 40px;
-  @media screen and (max-width: ${props => props.theme.responsive.large}) {
+  @media screen and (max-width: ${(props) => props.theme.responsive.large}) {
     width: 100%;
   }
 `;
