@@ -1,3 +1,5 @@
+# ⚠️ This project has been archived. ⚠️
+
 <p>
   Made with
   <a href="https://github.com/gatsbyjs/gatsby">

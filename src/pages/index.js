@@ -24,7 +24,7 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="" />
         <Helmet>
-          <link rel="canonical" href="https://catnose99.com" />
+          <link rel="canonical" href="https://archived.catnose.me" />
         </Helmet>
         <HomeJsonLd />
         <CategoryMenu location={location} />
